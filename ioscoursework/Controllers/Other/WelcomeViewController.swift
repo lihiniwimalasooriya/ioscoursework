@@ -16,6 +16,7 @@ class WelcomeViewController: UIViewController {
         return imageView
     }()
     
+    
     private let signInButton: UIButton = {
        let button = UIButton()
         button.backgroundColor = .white
