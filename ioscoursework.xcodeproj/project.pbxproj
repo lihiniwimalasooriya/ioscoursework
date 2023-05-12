@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A5801322A0EC46F00487DB1 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5801312A0EC46F00487DB1 /* LoginScreenViewController.swift */; };
+		0A5801342A0EC6C100487DB1 /* ForgetPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5801332A0EC6C100487DB1 /* ForgetPwdViewController.swift */; };
+		0A5801362A0EC7FC00487DB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5801352A0EC7FC00487DB1 /* LoginViewController.swift */; };
+		0A5801382A0EC86700487DB1 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5801372A0EC86700487DB1 /* HomePageViewController.swift */; };
+		0A58013A2A0ED0B500487DB1 /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5801392A0ED0B500487DB1 /* AuthHeaderView.swift */; };
 		0A64E0172A07C15D000A7084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E0162A07C15D000A7084 /* AppDelegate.swift */; };
 		0A64E0192A07C15D000A7084 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E0182A07C15D000A7084 /* SceneDelegate.swift */; };
 		0A64E01B2A07C15D000A7084 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E01A2A07C15D000A7084 /* HomeViewController.swift */; };
@@ -33,6 +38,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A5801312A0EC46F00487DB1 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		0A5801332A0EC6C100487DB1 /* ForgetPwdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPwdViewController.swift; sourceTree = "<group>"; };
+		0A5801352A0EC7FC00487DB1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0A5801372A0EC86700487DB1 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		0A5801392A0ED0B500487DB1 /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		0A64E0132A07C15D000A7084 /* ioscoursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ioscoursework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A64E0162A07C15D000A7084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A64E0182A07C15D000A7084 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,6 +188,11 @@
 				0A64E0402A07D156000A7084 /* PlayerViewController.swift */,
 				0A64E0422A07D177000A7084 /* PlaylistViewController.swift */,
 				0A64E0442A07D1A3000A7084 /* SearchResultViewController.swift */,
+				0A5801312A0EC46F00487DB1 /* LoginScreenViewController.swift */,
+				0A5801332A0EC6C100487DB1 /* ForgetPwdViewController.swift */,
+				0A5801352A0EC7FC00487DB1 /* LoginViewController.swift */,
+				0A5801372A0EC86700487DB1 /* HomePageViewController.swift */,
+				0A5801392A0ED0B500487DB1 /* AuthHeaderView.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -253,6 +268,7 @@
 			files = (
 				0A64E0332A07D05A000A7084 /* SearchViewController.swift in Sources */,
 				0A64E04D2A07D2A0000A7084 /* Playlist.swift in Sources */,
+				0A5801342A0EC6C100487DB1 /* ForgetPwdViewController.swift in Sources */,
 				0A64E0472A07D1EF000A7084 /* AuthManager.swift in Sources */,
 				0A64E03B2A07D0F1000A7084 /* WelcomeViewController.swift in Sources */,
 				0A64E03F2A07D135000A7084 /* ProfileViewController.swift in Sources */,
@@ -261,15 +277,19 @@
 				0A64E04B2A07D244000A7084 /* HapticsManager.swift in Sources */,
 				0A64E04F2A07D2D0000A7084 /* AudioTrack.swift in Sources */,
 				0A64E0392A07D0D0000A7084 /* AuthViewController.swift in Sources */,
+				0A5801322A0EC46F00487DB1 /* LoginScreenViewController.swift in Sources */,
+				0A5801362A0EC7FC00487DB1 /* LoginViewController.swift in Sources */,
 				0A64E03D2A07D116000A7084 /* SettingViewController.swift in Sources */,
 				0A64E0172A07C15D000A7084 /* AppDelegate.swift in Sources */,
 				0A64E0532A07D2FD000A7084 /* UserProfile.swift in Sources */,
 				0A64E0432A07D177000A7084 /* PlaylistViewController.swift in Sources */,
 				0A64E0512A07D2E0000A7084 /* Artist.swift in Sources */,
+				0A5801382A0EC86700487DB1 /* HomePageViewController.swift in Sources */,
 				0A64E0352A07D07A000A7084 /* LibraryViewController.swift in Sources */,
 				0A64E0412A07D156000A7084 /* PlayerViewController.swift in Sources */,
 				0A64E0452A07D1A3000A7084 /* SearchResultViewController.swift in Sources */,
 				0A64E0492A07D218000A7084 /* APICaller.swift in Sources */,
+				0A58013A2A0ED0B500487DB1 /* AuthHeaderView.swift in Sources */,
 				0A64E0192A07C15D000A7084 /* SceneDelegate.swift in Sources */,
 				0A684C712A094CC3007178D1 /* Extentions.swift in Sources */,
 			);

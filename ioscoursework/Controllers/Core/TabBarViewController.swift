@@ -9,6 +9,8 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
     
+//    public var compeletionHandler2: ((Bool) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
