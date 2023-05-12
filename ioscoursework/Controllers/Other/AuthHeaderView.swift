@@ -9,7 +9,7 @@ import UIKit
 
 class AuthHeaderView: UIView {
 
-    private let imageView: UIImageView = {
+    private let profileImg: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.image = UIImage(named: "Images" )
@@ -40,11 +40,23 @@ class AuthHeaderView: UIView {
         self.titleLabel.text = title
         self.subTitleLabel.text = subTitle
         
-       // self.setupUI()
+        self.setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private func setupUI() {
+        self.addSubview(profileImg)
+        self.addSubview(titleLabel)
+        self.addSubview(subTitleLabel)
+
+        profileImg.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
 
 }
