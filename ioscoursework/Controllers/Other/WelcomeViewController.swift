@@ -46,7 +46,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func didTapSignIn(){
-        let vc = LoginScreenViewController()
+        let vc = LoginViewController()
         vc.compeletionHandler = { [weak self] success in
             DispatchQueue.main.async {
                 self?.handleSignIn(sccess: success)

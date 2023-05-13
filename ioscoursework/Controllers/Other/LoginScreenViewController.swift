@@ -9,7 +9,7 @@ import UIKit
 
 class LoginScreenViewController: UIViewController {
 
-    public var compeletionHandler: ((Bool) -> Void)?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

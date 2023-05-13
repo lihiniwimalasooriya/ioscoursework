@@ -55,8 +55,20 @@ class AuthHeaderView: UIView {
         profileImg.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false
+    
+    NSLayoutConstraint.activate([
+                self.profileImg.topAnchor.constraint(equalTo: self.topAnchor, constant: 30),
+                self.profileImg.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                self.profileImg.widthAnchor.constraint(equalToConstant: 90),
+                self.profileImg.heightAnchor.constraint(equalTo: profileImg.widthAnchor),
+                
+                self.titleLabel.topAnchor.constraint(equalTo: profileImg.bottomAnchor, constant: 19),
+                self.titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                self.titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                
+                self.subTitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
+                self.subTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                self.subTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            ])
     }
-    
-    
-
 }
