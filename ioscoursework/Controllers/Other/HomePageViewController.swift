@@ -14,6 +14,4 @@ class HomePageViewController: UIViewController {
 
         self.view.backgroundColor = .systemPurple
     }
-    
-
 }

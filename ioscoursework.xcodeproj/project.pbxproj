@@ -20,6 +20,7 @@
 		0A59CF492A0F92D100F908E0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0A59CF482A0F92D100F908E0 /* FirebaseAuth */; };
 		0A59CF4B2A0F92D100F908E0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0A59CF4A2A0F92D100F908E0 /* FirebaseFirestore */; };
 		0A59CF4F2A0FA55400F908E0 /* RegisterUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59CF4E2A0FA55400F908E0 /* RegisterUserRequest.swift */; };
+		0A59CF512A0FB1F500F908E0 /* LoginUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A59CF502A0FB1F500F908E0 /* LoginUserRequest.swift */; };
 		0A64E0172A07C15D000A7084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E0162A07C15D000A7084 /* AppDelegate.swift */; };
 		0A64E0192A07C15D000A7084 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E0182A07C15D000A7084 /* SceneDelegate.swift */; };
 		0A64E01B2A07C15D000A7084 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E01A2A07C15D000A7084 /* HomeViewController.swift */; };
@@ -57,6 +58,7 @@
 		0A59CF432A0F78B100F908E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A59CF452A0F87DD00F908E0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		0A59CF4E2A0FA55400F908E0 /* RegisterUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserRequest.swift; sourceTree = "<group>"; };
+		0A59CF502A0FB1F500F908E0 /* LoginUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserRequest.swift; sourceTree = "<group>"; };
 		0A64E0132A07C15D000A7084 /* ioscoursework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ioscoursework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A64E0162A07C15D000A7084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A64E0182A07C15D000A7084 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				0A64E0502A07D2E0000A7084 /* Artist.swift */,
 				0A64E0522A07D2FD000A7084 /* UserProfile.swift */,
 				0A59CF4E2A0FA55400F908E0 /* RegisterUserRequest.swift */,
+				0A59CF502A0FB1F500F908E0 /* LoginUserRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				0A59CF4F2A0FA55400F908E0 /* RegisterUserRequest.swift in Sources */,
 				0A64E03D2A07D116000A7084 /* SettingViewController.swift in Sources */,
 				0A64E0172A07C15D000A7084 /* AppDelegate.swift in Sources */,
+				0A59CF512A0FB1F500F908E0 /* LoginUserRequest.swift in Sources */,
 				0A64E0532A07D2FD000A7084 /* UserProfile.swift in Sources */,
 				0A64E0432A07D177000A7084 /* PlaylistViewController.swift in Sources */,
 				0A64E0512A07D2E0000A7084 /* Artist.swift in Sources */,
