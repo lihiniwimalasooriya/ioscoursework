@@ -29,7 +29,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         window.makeKeyAndVisible()
-        self.window = window    }
+        self.window = window
+        self.window?.makeKeyAndVisible()
+        
+        let userRequest = RegiserUserRequest(
+            username: "Lihini",
+            email: "lswimalasooriya@gmail.com",
+            password: "Abc123@@@")
+        
+        AuthService.shared.registerUser(with: userRequest) { wasRegistered, error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    
+                    print("wasRegistered", wasRegistered)
+                }
+    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
