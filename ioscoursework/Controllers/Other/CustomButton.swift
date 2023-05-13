@@ -35,6 +35,7 @@ class CustomButton: UIButton {
                 
             case .small:
                 self.titleLabel?.font = .systemFont(ofSize: 16, weight: .regular)
+        
             }
         }
         

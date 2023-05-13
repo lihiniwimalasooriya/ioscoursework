@@ -12,7 +12,7 @@ class AuthHeaderView: UIView {
     private let profileImg: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "Images" )
+        iv.image = UIImage(named: "profile_img" )
         iv.tintColor = .white
         return iv
     } ()
