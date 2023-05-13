@@ -88,9 +88,23 @@ class LoginViewController: UIViewController  {
         }
         
         @objc private func didTapSignIn() {
-            let vc = HomeViewController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: false, completion: nil)
+            let enteredEmail = emailField.text
+            let enteredPassword = passwordField.text
+            let hardcodedEmail = "lihini@gmail.com"
+            let hardcodedPassword = "abc123@@@"
+            
+            if enteredEmail == hardcodedEmail && enteredPassword == hardcodedPassword {
+                    let vc = TabBarViewController()
+
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: false, completion: nil)
+            }
+            else {
+                    let alert = UIAlertController(title: "Login Failed", message: "Invalid email or password", preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                        alert.addAction(okAction)
+                        present(alert, animated: true, completion: nil)
+            }
         }
         
         @objc private func didTapNewUser() {

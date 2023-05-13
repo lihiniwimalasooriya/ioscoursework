@@ -13,6 +13,8 @@ class CustomTextField: UITextField {
             case username
             case email
             case password
+        case height
+        case weight
         }
         
         private let authFieldType: CustomTextFieldType
