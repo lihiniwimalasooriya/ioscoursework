@@ -87,7 +87,6 @@ class LoginViewController: UIViewController  {
             ])
         }
         
-        // MARK: - Selectors
         @objc private func didTapSignIn() {
             let vc = HomeViewController()
             vc.modalPresentationStyle = .fullScreen

@@ -9,7 +9,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
-    // MARK: - UI Components
+
     private let headerView = AuthHeaderView(title: "Sign Up", subTitle: "Create your account")
     
     private let usernameField = CustomTextField(fieldType: .username)
@@ -20,7 +20,6 @@ class RegisterViewController: UIViewController {
     private let signInButton = CustomButton(title: "Already have an account? Sign In.", fontSize: .med)
     
     
-    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -34,7 +33,7 @@ class RegisterViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
-    // MARK: - UI Setup
+
     private func setupUI() {
         self.view.backgroundColor = .systemBackground
         
@@ -91,7 +90,6 @@ class RegisterViewController: UIViewController {
         ])
     }
     
-    // MARK: - Selectors
     @objc func didTapSignUp() {
         print("DEBUG PRINT:", "didTapSignUp")
     }
