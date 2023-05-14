@@ -8,29 +8,30 @@
 import UIKit
 
 class BMIViewController: UIViewController {
-
-    private let headerView = AuthHeaderView(title: "BMI Calculation", subTitle: "Sign in to your account")
-        private let heightBMI = CustomTextField(fieldType: .heightBMI)
-        private let weightBMI = CustomTextField(fieldType: .weightBMI)
-        private let bmiButton = CustomButton(title: "Calculate", hasBackground: true, fontSize: .big)
-        private let labelHeight: UILabel = {
-                let labelHeight = UILabel()
-                labelHeight.textAlignment = .center
-                labelHeight.text = ""
-                labelHeight.font = UIFont.boldSystemFont(ofSize: 20)
-                labelHeight.textColor = .black
+    
+    private let headerView = AuthHeaderView(title: "BMI Calculation", subTitle: " ")
+    private let heightBMI = CustomTextField(fieldType: .heightBMI)
+    private let weightBMI = CustomTextField(fieldType: .weightBMI)
+    private let bmiButton = CustomButton(title: "Calculate", hasBackground: true, fontSize: .big)
+    private let labelHeight: UILabel = {
+        let labelHeight = UILabel()
+            labelHeight.textAlignment = .center
+            labelHeight.text = ""
+            labelHeight.font = UIFont.boldSystemFont(ofSize: 20)
+            labelHeight.textColor = .black
                 
-                return labelHeight
-            }()
-        private let labelWeight: UILabel = {
-                let labelWeight = UILabel()
-                labelWeight.textAlignment = .center
-                labelWeight.text = ""
-                labelWeight.font = UIFont.boldSystemFont(ofSize: 20)
-                labelWeight.textColor = .black
+    return labelHeight
+    }()
+    
+    private let labelWeight: UILabel = {
+        let labelWeight = UILabel()
+            labelWeight.textAlignment = .center
+            labelWeight.text = ""
+            labelWeight.font = UIFont.boldSystemFont(ofSize: 20)
+            labelWeight.textColor = .black
                 
-                return labelWeight
-            }()
+    return labelWeight
+    }()
         
         override func viewDidLoad() {
             super.viewDidLoad()

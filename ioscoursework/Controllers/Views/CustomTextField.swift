@@ -10,11 +10,16 @@ import UIKit
 class CustomTextField: UITextField {
 
     enum CustomTextFieldType {
-            case username
-            case email
-            case password
-            case heightBMI
-            case weightBMI
+        case username
+        case email
+        case password
+        case heightBMI
+        case weightBMI
+        case name
+        case age
+        case gender
+        case height
+        case weight
         }
         
     private let authFieldType: CustomTextFieldType
@@ -56,7 +61,30 @@ class CustomTextField: UITextField {
                        self.isSecureTextEntry = true
                        self.layer.borderWidth = 1.0
                        self.layer.borderColor = UIColor.lightGray.cgColor
-                  
+                   case .name:
+                       self.placeholder = "Full Name"
+                       self.keyboardType = .emailAddress
+                       self.textContentType = .emailAddress
+                   case .age:
+                       self.placeholder = "Age"
+                       self.textContentType = .oneTimeCode
+                       self.isSecureTextEntry = true
+                   case .height:
+                       self.placeholder = "Height(cm)"
+                       self.textContentType = .oneTimeCode
+                       self.isSecureTextEntry = true
+                       self.layer.borderWidth = 1.0
+                       self.layer.borderColor = UIColor.lightGray.cgColor
+                   case .weight:
+                       self.placeholder = "Weight(kg)"
+                       self.textContentType = .oneTimeCode
+                       self.isSecureTextEntry = true
+                       self.layer.borderWidth = 1.0
+                       self.layer.borderColor = UIColor.lightGray.cgColor
+                   default:
+                    break
+                    
+                    
                    }
                       }
                       
