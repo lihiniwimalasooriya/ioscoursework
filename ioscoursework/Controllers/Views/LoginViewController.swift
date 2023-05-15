@@ -90,8 +90,8 @@ class LoginViewController: UIViewController  {
         @objc private func didTapSignIn() {
             let enteredEmail = emailField.text
             let enteredPassword = passwordField.text
-            let hardcodedEmail = "lihini@gmail.com"
-            let hardcodedPassword = "abc123@@@"
+            let hardcodedEmail = "lihini"
+            let hardcodedPassword = "abc123"
             
             if enteredEmail == hardcodedEmail && enteredPassword == hardcodedPassword {
                     let vc = TabBarViewController()

@@ -44,6 +44,9 @@
 		0A8EDAA12A10FC7F00E8D066 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A8EDAA02A10FC7F00E8D066 /* FirebaseAnalytics */; };
 		0A8EDAA32A10FC8700E8D066 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 0A8EDAA22A10FC8700E8D066 /* FirebaseAnalyticsSwift-Beta */; };
 		0A8EDAAB2A1120C700E8D066 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8EDAAA2A1120B900E8D066 /* UserViewController.swift */; };
+		0A8EDAAD2A1167B000E8D066 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8EDAAC2A1167B000E8D066 /* ListViewController.swift */; };
+		0A8EDAAF2A116A7100E8D066 /* ListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8EDAAE2A116A7100E8D066 /* ListManager.swift */; };
+		0A8EDAB12A116B2A00E8D066 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8EDAB02A116B2A00E8D066 /* ListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,9 @@
 		0A64E0522A07D2FD000A7084 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		0A684C702A094CC3007178D1 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		0A8EDAAA2A1120B900E8D066 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		0A8EDAAC2A1167B000E8D066 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		0A8EDAAE2A116A7100E8D066 /* ListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManager.swift; sourceTree = "<group>"; };
+		0A8EDAB02A116B2A00E8D066 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,8 @@
 				0A64E0522A07D2FD000A7084 /* UserProfile.swift */,
 				0A59CF4E2A0FA55400F908E0 /* RegisterUserRequest.swift */,
 				0A59CF502A0FB1F500F908E0 /* LoginUserRequest.swift */,
+				0A8EDAAE2A116A7100E8D066 /* ListManager.swift */,
+				0A8EDAB02A116B2A00E8D066 /* ListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -193,7 +201,6 @@
 		0A64E0362A07D090000A7084 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0A64E01A2A07C15D000A7084 /* HomeViewController.swift */,
 				0A64E0342A07D07A000A7084 /* LibraryViewController.swift */,
 			);
 			path = Core;
@@ -217,6 +224,8 @@
 				0A59CF522A0FF94900F908E0 /* BMIViewController.swift */,
 				0A64E0302A07D009000A7084 /* TabBarViewController.swift */,
 				0A8EDAAA2A1120B900E8D066 /* UserViewController.swift */,
+				0A8EDAAC2A1167B000E8D066 /* ListViewController.swift */,
+				0A64E01A2A07C15D000A7084 /* HomeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,11 +318,14 @@
 			files = (
 				0A64E04D2A07D2A0000A7084 /* Playlist.swift in Sources */,
 				0A8EDAAB2A1120C700E8D066 /* UserViewController.swift in Sources */,
+				0A8EDAAD2A1167B000E8D066 /* ListViewController.swift in Sources */,
+				0A8EDAAF2A116A7100E8D066 /* ListManager.swift in Sources */,
 				0A5801342A0EC6C100487DB1 /* ForgetPwdViewController.swift in Sources */,
 				0A64E0472A07D1EF000A7084 /* AuthManager.swift in Sources */,
 				0A59CF3E2A0F478000F908E0 /* CustomButton.swift in Sources */,
 				0A64E03B2A07D0F1000A7084 /* WelcomeViewController.swift in Sources */,
 				0A64E03F2A07D135000A7084 /* ProfileViewController.swift in Sources */,
+				0A8EDAB12A116B2A00E8D066 /* ListModel.swift in Sources */,
 				0A64E0312A07D009000A7084 /* TabBarViewController.swift in Sources */,
 				0A64E01B2A07C15D000A7084 /* HomeViewController.swift in Sources */,
 				0A59CF3C2A0F403E00F908E0 /* CustomTextField.swift in Sources */,

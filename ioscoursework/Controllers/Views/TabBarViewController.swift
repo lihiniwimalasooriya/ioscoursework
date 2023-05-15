@@ -15,7 +15,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         let vc1 = HomeViewController()
-        let vc2 = HomePageViewController()
+        let vc2 = UserViewController()
         let vc3 = BMIViewController()
         
         vc1.title = "Home"
