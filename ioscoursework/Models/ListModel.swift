@@ -8,13 +8,8 @@
 import Foundation
 
 struct ListModel: Decodable {
-  let title: String
-  let description: String
-  let movies: [Movies]
+  let id: Int
+  let name: String
 }
 
-struct Movies: Decodable {
-  let id: String
-  let title: String
-  let releaseYear: String
-}
+

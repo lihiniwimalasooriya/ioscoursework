@@ -59,31 +59,31 @@ class UserViewController: UIViewController {
                 headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
                 // name constraints
-                name.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 170),
+                name.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 170),
                 name.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                 name.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                 name.heightAnchor.constraint(equalToConstant: 50),
             
                 // age constraints
-                age.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 170),
+                age.topAnchor.constraint(equalTo: age.bottomAnchor, constant: 170),
                 age.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                 age.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                 age.heightAnchor.constraint(equalToConstant: 50),
             
                 // height constraints
-                height.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 170),
+                height.topAnchor.constraint(equalTo: height.bottomAnchor, constant: 170),
                 height.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                 height.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                 height.heightAnchor.constraint(equalToConstant: 50),
                 
                 // weight constraints
-                weight.topAnchor.constraint(equalTo: height.bottomAnchor, constant: 20),
+                weight.topAnchor.constraint(equalTo: weight.bottomAnchor, constant: 20),
                 weight.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                 weight.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                 weight.heightAnchor.constraint(equalToConstant: 50),
                 
                 // userButton constraints
-                userButton.topAnchor.constraint(equalTo: weight.bottomAnchor, constant: 20),
+                userButton.topAnchor.constraint(equalTo: userButton.bottomAnchor, constant: 20),
                 userButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                 userButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                 userButton.heightAnchor.constraint(equalToConstant: 50),
