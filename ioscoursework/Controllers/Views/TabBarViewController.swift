@@ -17,7 +17,7 @@ class TabBarViewController: UITabBarController {
         let vc1 = HomeViewController()
         let vc2 = UserViewController()
         let vc3 = BMIViewController()
-        let vc4 = HomePageViewController()
+        let vc4 = ListViewController()
         
         vc1.title = "Home"
         vc2.title = "Search"
