@@ -17,7 +17,7 @@ class BMIViewController: UIViewController {
     private let heightBMI = CustomTextField(fieldType: .heightBMI)
     private let weightBMI = CustomTextField(fieldType: .weightBMI)
     private let bmiButton = CustomButton(title: "Calculate", hasBackground: true, fontSize: .big)
-    private let planButton = CustomButton(title: "Get Your fitness Plan", hasBackground: true, fontSize: .big)
+    private let planButton = CustomButton(title: "Get Your Fitness Plan", hasBackground: true, fontSize: .big)
     private let labelHeight: UILabel = {
         let labelHeight = UILabel()
             labelHeight.textAlignment = .center
@@ -82,7 +82,7 @@ class BMIViewController: UIViewController {
                     headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     
                     // heightBMI constraints
-                    heightBMI.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 300),
+                    heightBMI.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 200),
                     heightBMI.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     heightBMI.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     heightBMI.heightAnchor.constraint(equalToConstant: 50),
@@ -110,7 +110,7 @@ class BMIViewController: UIViewController {
                     labelWeight.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                 
                 // planButton constraints
-                planButton.topAnchor.constraint(equalTo: planButton.bottomAnchor, constant: 20),
+                planButton.topAnchor.constraint(equalTo: labelWeight.bottomAnchor, constant: 20),
                 planButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                 planButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                 planButton.heightAnchor.constraint(equalToConstant: 50),
@@ -141,36 +141,44 @@ class BMIViewController: UIViewController {
                     let bmi = weight / (heightInMeters * heightInMeters)
                         
                         // Display or use the calculated BMI value
-                    labelHeight.text = "\(bmi)"
+                    labelHeight.text = "Your BMI is \(bmi)"
         }
     
     @objc private func didTapPlan() {
         
-        let vc = BMILessViewController()
+      //  let vc = BMILessViewController()
         
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: false, completion: nil)    }
-    
-
-      //      let heightBMI = heightBMI.text
-      //      let weightBMI = weightBMI.text
-     
-     //       let data = [
-     //         "heightBMI": heightBMI,
-     //           "weightBMI": weightBMI
-      //      ]
+      //  vc.modalPresentationStyle = .fullScreen
+      //  self.present(vc, animated: false, completion: nil)
+        
+        //
+        
+        guard let heightString = heightBMI.text,
+                  let height = Double(heightString),
+                  height > 0 else {
+                labelHeight.text = "Error"
+                return
+            }
             
-         
-       //         databaseRef.child("bmi").childByAutoId().setValue(data){error,_ in
-       //             if let error = error{
-        //                print("Error posting data: \(error.localizedDescription)")
-        //            }else{
-         //               print("Data posted successfully")
-         //           }
-             
-          //          let vc = BMIViewController()
-
-          //          vc.modalPresentationStyle = .fullScreen
-           //         self.present(vc, animated: false, completion: nil)
-           //     }       }
+            guard let weightString = weightBMI.text,
+                  let weight = Double(weightString),
+                  weight > 0 else {
+                weightBMI.text = "Error"
+                return
+            }
+            
+            let heightInMeters = height / 100 // Convert height from centimeters to meters
+            let bmi = weight / (heightInMeters * heightInMeters)
+            
+        if (heightBMI.text?.isEmpty == true || weightBMI.text?.isEmpty == true) && bmi == nil {
+            print("Please calculate your BMI before getting your fitness plan.")
+            let vc = BMIViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false, completion: nil)
+            } else if bmi < 20 {
+                let anotherVC = BMILessViewController()
+                // Configure anotherVC if needed
+                self.navigationController?.pushViewController(anotherVC, animated: true)
+            }
     }
+}

@@ -82,10 +82,10 @@ class LoginViewController: UIViewController  {
                 self.newUserButton.heightAnchor.constraint(equalToConstant: 44),
                 self.newUserButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
                 
-       //         self.forgotPasswordButton.topAnchor.constraint(equalTo: newUserButton.bottomAnchor, constant: 6),
-        //        self.forgotPasswordButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-         //       self.forgotPasswordButton.heightAnchor.constraint(equalToConstant: 44),
-         //       self.forgotPasswordButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+               self.forgotPasswordButton.topAnchor.constraint(equalTo: newUserButton.bottomAnchor, constant: 6),
+               self.forgotPasswordButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+               self.forgotPasswordButton.heightAnchor.constraint(equalToConstant: 44),
+               self.forgotPasswordButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             ])
         }
         

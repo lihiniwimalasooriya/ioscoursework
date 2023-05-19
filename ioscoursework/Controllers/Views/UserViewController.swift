@@ -89,13 +89,13 @@ class UserViewController: UIViewController {
                     weight.heightAnchor.constraint(equalToConstant: 50),
                 
                     // goal constraints
-                    goal.topAnchor.constraint(equalTo: goal.bottomAnchor, constant: 20),
+                    goal.topAnchor.constraint(equalTo: weight.bottomAnchor, constant: 20),
                     goal.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     goal.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     goal.heightAnchor.constraint(equalToConstant: 50),
                 
                     // userButton constraints
-                    userButton.topAnchor.constraint(equalTo: weight.bottomAnchor, constant: 20),
+                    userButton.topAnchor.constraint(equalTo: goal.bottomAnchor, constant: 20),
                     userButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     userButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     userButton.heightAnchor.constraint(equalToConstant: 50),
