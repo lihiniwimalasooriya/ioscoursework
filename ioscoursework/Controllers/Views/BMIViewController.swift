@@ -176,7 +176,7 @@ class BMIViewController: UIViewController {
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: false, completion: nil)
             } else if bmi < 20 {
-                let anotherVC = BMILessViewController()
+                let anotherVC = BMIOverweightViewController()
                 // Configure anotherVC if needed
                 self.navigationController?.pushViewController(anotherVC, animated: true)
             }else if bmi > 20 {
