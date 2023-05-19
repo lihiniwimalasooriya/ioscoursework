@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A4B1B602A17BE51007D75E9 /* BMILessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4B1B5F2A17BE51007D75E9 /* BMILessViewController.swift */; };
+		0A4B1B602A17BE51007D75E9 /* BMIOverweightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4B1B5F2A17BE51007D75E9 /* BMIOverweightViewController.swift */; };
 		0A5801322A0EC46F00487DB1 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5801312A0EC46F00487DB1 /* LoginScreenViewController.swift */; };
 		0A5801342A0EC6C100487DB1 /* ForgetPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5801332A0EC6C100487DB1 /* ForgetPwdViewController.swift */; };
 		0A5801362A0EC7FC00487DB1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5801352A0EC7FC00487DB1 /* LoginViewController.swift */; };
@@ -46,7 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A4B1B5F2A17BE51007D75E9 /* BMILessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILessViewController.swift; sourceTree = "<group>"; };
+		0A4B1B5F2A17BE51007D75E9 /* BMIOverweightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIOverweightViewController.swift; sourceTree = "<group>"; };
 		0A5801312A0EC46F00487DB1 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		0A5801332A0EC6C100487DB1 /* ForgetPwdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPwdViewController.swift; sourceTree = "<group>"; };
 		0A5801352A0EC7FC00487DB1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 				0A8EDAAA2A1120B900E8D066 /* UserViewController.swift */,
 				0A64E01A2A07C15D000A7084 /* HomeViewController.swift */,
 				0AA90D652A1560EE00E4FAA8 /* ListViewController.swift */,
-				0A4B1B5F2A17BE51007D75E9 /* BMILessViewController.swift */,
+				0A4B1B5F2A17BE51007D75E9 /* BMIOverweightViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 				0A5801342A0EC6C100487DB1 /* ForgetPwdViewController.swift in Sources */,
 				0AA90D662A1560EE00E4FAA8 /* ListViewController.swift in Sources */,
 				0A59CF3E2A0F478000F908E0 /* CustomButton.swift in Sources */,
-				0A4B1B602A17BE51007D75E9 /* BMILessViewController.swift in Sources */,
+				0A4B1B602A17BE51007D75E9 /* BMIOverweightViewController.swift in Sources */,
 				0A64E03B2A07D0F1000A7084 /* WelcomeViewController.swift in Sources */,
 				0A64E03F2A07D135000A7084 /* ProfileViewController.swift in Sources */,
 				0A64E0312A07D009000A7084 /* TabBarViewController.swift in Sources */,
