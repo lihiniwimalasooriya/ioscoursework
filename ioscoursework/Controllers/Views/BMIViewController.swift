@@ -156,22 +156,22 @@ class BMIViewController: UIViewController {
         guard let heightString = heightBMI.text,
                   let height = Double(heightString),
                   height > 0 else {
-                labelHeight.text = "Error"
+                labelHeight.text = "Please calculate your\nBMI before getting your fitness plan."
                 return
             }
             
             guard let weightString = weightBMI.text,
                   let weight = Double(weightString),
                   weight > 0 else {
-                weightBMI.text = "Error"
+                weightBMI.text = "Please calculate your\nBMI before getting your fitness plan."
                 return
             }
             
             let heightInMeters = height / 100 // Convert height from centimeters to meters
             let bmi = weight / (heightInMeters * heightInMeters)
             
-        if (heightBMI.text?.isEmpty == true || weightBMI.text?.isEmpty == true) && bmi == nil {
-            print("Please calculate your BMI before getting your fitness plan.")
+        if (heightBMI.text?.isEmpty == true || weightBMI.text?.isEmpty == true){
+           // print("Please calculate your BMI before getting your fitness plan.")
             let vc = BMIViewController()
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: false, completion: nil)
