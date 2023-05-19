@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "562F6BC8-C5BF-4B92-8B6C-FA356A0A7F40"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ioscoursework/Controllers/Views/UserViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "setupUserDetails()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "76450A2F-8094-4AFA-95D6-D96712792744"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -44,8 +28,8 @@
             filePath = "ioscoursework/Controllers/Views/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
             landmarkName = "LoginViewController"
             landmarkType = "3">
          </BreakpointContent>

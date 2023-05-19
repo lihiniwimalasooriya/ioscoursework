@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class LoginViewController: UIViewController  {
         
     public var compeletionHandler: ((Bool) -> Void)?
     
+        private let databaseRef = Database.database().reference()
 
         private let headerView = AuthHeaderView(title: "Sign In", subTitle: "Sign in to your account")
         
@@ -92,8 +95,19 @@ class LoginViewController: UIViewController  {
             let enteredPassword = passwordField.text
             let hardcodedEmail = "lihini"
             let hardcodedPassword = "abc123"
+            let data = [
+                "username": enteredEmail,
+                "password": enteredPassword
+            ]
             
             if enteredEmail == hardcodedEmail && enteredPassword == hardcodedPassword {
+                databaseRef.child("users").childByAutoId().setValue(data){error,_ in
+                    if let error = error{
+                        print("Error posting data: \(error.localizedDescription)")
+                    }else{
+                        print("Data posted successfully")
+                    }
+                }
                     let vc = TabBarViewController()
 
                     vc.modalPresentationStyle = .fullScreen
