@@ -17,6 +17,7 @@ class BMIViewController: UIViewController {
     private let heightBMI = CustomTextField(fieldType: .heightBMI)
     private let weightBMI = CustomTextField(fieldType: .weightBMI)
     private let bmiButton = CustomButton(title: "Calculate", hasBackground: true, fontSize: .big)
+    private let planButton = CustomButton(title: "Get Your fitness Plan", hasBackground: true, fontSize: .big)
     private let labelHeight: UILabel = {
         let labelHeight = UILabel()
             labelHeight.textAlignment = .center
@@ -41,7 +42,7 @@ class BMIViewController: UIViewController {
             super.viewDidLoad()
             self.setupUserinterface()
             self.bmiButton.addTarget(self, action: #selector(didTapBMI), for: .touchUpInside)
-        }
+            self.planButton.addTarget(self, action: #selector(didTapPlan), for: .touchUpInside)        }
         
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
@@ -60,6 +61,7 @@ class BMIViewController: UIViewController {
             self.view.addSubview(heightBMI)
             self.view.addSubview(weightBMI)
             self.view.addSubview(bmiButton)
+            self.view.addSubview(planButton)
             self.view.addSubview(labelHeight)
             self.view.addSubview(labelWeight)
         
@@ -67,6 +69,7 @@ class BMIViewController: UIViewController {
             heightBMI.translatesAutoresizingMaskIntoConstraints = false
             weightBMI.translatesAutoresizingMaskIntoConstraints = false
             bmiButton.translatesAutoresizingMaskIntoConstraints = false
+            planButton.translatesAutoresizingMaskIntoConstraints = false
             labelWeight.translatesAutoresizingMaskIntoConstraints = false
             labelHeight.translatesAutoresizingMaskIntoConstraints = false
            
@@ -79,7 +82,7 @@ class BMIViewController: UIViewController {
                     headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     
                     // heightBMI constraints
-                    heightBMI.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 170),
+                    heightBMI.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 300),
                     heightBMI.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     heightBMI.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     heightBMI.heightAnchor.constraint(equalToConstant: 50),
@@ -105,7 +108,12 @@ class BMIViewController: UIViewController {
                     labelWeight.topAnchor.constraint(equalTo: labelHeight.bottomAnchor, constant: 20),
                     labelWeight.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     labelWeight.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                   
+                
+                // planButton constraints
+                planButton.topAnchor.constraint(equalTo: planButton.bottomAnchor, constant: 20),
+                planButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+                planButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                planButton.heightAnchor.constraint(equalToConstant: 50),
                      
                 ])
             
@@ -135,8 +143,15 @@ class BMIViewController: UIViewController {
                         // Display or use the calculated BMI value
                     labelHeight.text = "\(bmi)"
         }
-            
-            
+    
+    @objc private func didTapPlan() {
+        
+        let vc = BMILessViewController()
+        
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false, completion: nil)    }
+    
+
       //      let heightBMI = heightBMI.text
       //      let weightBMI = weightBMI.text
      
