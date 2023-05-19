@@ -20,13 +20,10 @@ class LoginViewController: UIViewController  {
         private let emailField = CustomTextField(fieldType: .email)
         private let passwordField = CustomTextField(fieldType: .password)
     
-        //y
         private let signInButton = CustomButton(title: "Sign In", hasBackground: true, fontSize: .big)
         private let newUserButton = CustomButton(title: "New User? Create Account.", fontSize: .med)
         private let forgotPasswordButton = CustomButton(title: "Forgot Password?", fontSize: .small)
         
-
-        //testing 4
         override func viewDidLoad() {
             super.viewDidLoad()
             self.setupUI()
