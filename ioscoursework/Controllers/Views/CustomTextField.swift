@@ -63,12 +63,16 @@ class CustomTextField: UITextField {
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    case .name:
                        self.placeholder = "Full Name"
-                       self.keyboardType = .emailAddress
-                       self.textContentType = .emailAddress
+                       self.textContentType = .oneTimeCode
+                       self.isSecureTextEntry = true
+                       self.layer.borderWidth = 1.0
+                       self.layer.borderColor = UIColor.lightGray.cgColor
                    case .age:
                        self.placeholder = "Age"
                        self.textContentType = .oneTimeCode
                        self.isSecureTextEntry = true
+                       self.layer.borderWidth = 1.0
+                       self.layer.borderColor = UIColor.lightGray.cgColor
                    case .height:
                        self.placeholder = "Height(cm)"
                        self.textContentType = .oneTimeCode

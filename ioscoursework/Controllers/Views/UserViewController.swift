@@ -13,7 +13,7 @@ class UserViewController: UIViewController {
     
     private let databaseRef = Database.database().reference()
     
-    private let headerView = AuthHeaderView(title: "User Details", subTitle: "Sign in to your account")        
+    private let headerView = AuthHeaderView(title: "User Details", subTitle: "***")
     private let name = CustomTextField(fieldType: .name)
     private let age = CustomTextField(fieldType: .age)
     private let height = CustomTextField(fieldType: .height)

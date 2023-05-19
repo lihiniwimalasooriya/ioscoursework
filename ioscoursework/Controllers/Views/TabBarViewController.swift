@@ -20,7 +20,7 @@ class TabBarViewController: UITabBarController {
         let vc4 = ListViewController()
         
         vc1.title = "Home"
-        vc2.title = "Search"
+        vc2.title = "User Details"
         vc3.title = "BMI"
         vc4.title = "test"
         
@@ -35,7 +35,7 @@ class TabBarViewController: UITabBarController {
         let nav4 = UINavigationController(rootViewController: vc4)
         
         nav1.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
-        nav2.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        nav2.tabBarItem = UITabBarItem(title: "User Datails", image: UIImage(systemName: "person.fill"), tag: 1)
         nav3.tabBarItem = UITabBarItem(title: "BMI", image: UIImage(systemName: "gauge"), tag: 1)
         nav4.tabBarItem = UITabBarItem(title: "test", image: UIImage(systemName: "house"), tag: 1)
         
