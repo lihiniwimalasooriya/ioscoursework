@@ -51,30 +51,23 @@ class BMIViewController: UIViewController {
                  backgroundImage.frame = view.bounds
                  view.addSubview(backgroundImage)
                  view.sendSubviewToBack(backgroundImage)
-            //self.view.addSubview(bmiImg)
+            
             self.view.addSubview(headerView)
             self.view.addSubview(heightBMI)
             self.view.addSubview(weightBMI)
             self.view.addSubview(bmiButton)
             self.view.addSubview(labelHeight)
             self.view.addSubview(labelWeight)
-            //self.view.addSubview(bmiImg)
-          
-            //bmiImg.translatesAutoresizingMaskIntoConstraints = false
+        
             headerView.translatesAutoresizingMaskIntoConstraints = false
             heightBMI.translatesAutoresizingMaskIntoConstraints = false
             weightBMI.translatesAutoresizingMaskIntoConstraints = false
             bmiButton.translatesAutoresizingMaskIntoConstraints = false
             labelWeight.translatesAutoresizingMaskIntoConstraints = false
             labelHeight.translatesAutoresizingMaskIntoConstraints = false
-          //  bmiImg.translatesAutoresizingMaskIntoConstraints = false
+           
             NSLayoutConstraint.activate([
-                    // bmiImg constraints
-    //                bmiImg.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-    //                bmiImg.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-    //                bmiImg.widthAnchor.constraint(equalToConstant: 100),
-    //                bmiImg.heightAnchor.constraint(equalToConstant: 100),
-    //
+  
                     // headerView constraints
                    headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
                 

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -38,13 +38,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window?.makeKeyAndVisible()
         }
         
-        public func checkAuthentication() {
-            if Auth.auth().currentUser == nil {
-                self.goToController(with: LoginViewController())
-            } else {
-                self.goToController(with: HomeViewController())
-            }
-        }
+       // public func checkAuthentication() {
+         //   if Auth.auth().currentUser == nil {
+         //       self.goToController(with: LoginViewController())
+          //  } else {
+          //      self.goToController(with: HomeViewController())
+         //   }
+       // }
         
         private func goToController(with viewController: UIViewController) {
             DispatchQueue.main.async { [weak self] in

@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class UserViewController: UIViewController {
-
-    private let headerView = AuthHeaderView(title: "User Details", subTitle: "Sign in to your account")
-        private let name = CustomTextField(fieldType: .name)
-        private let age = CustomTextField(fieldType: .age)
-        private let height = CustomTextField(fieldType: .height)
-        private let weight = CustomTextField(fieldType: .weight)
-        private let userButton = CustomButton(title: "Save", hasBackground: true, fontSize: .big)
+    
+    private let databaseRef = Database.database().reference()
+    
+    private let headerView = AuthHeaderView(title: "User Details", subTitle: "Sign in to your account")        
+    private let name = CustomTextField(fieldType: .name)
+    private let age = CustomTextField(fieldType: .age)
+    private let height = CustomTextField(fieldType: .height)
+    private let weight = CustomTextField(fieldType: .weight)
+    private let userButton = CustomButton(title: "Save", hasBackground: true, fontSize: .big)
         
                   
         override func viewDidLoad() {
@@ -93,5 +97,30 @@ class UserViewController: UIViewController {
         }
         @objc private func didTapUser() {
             
-     }
+            let name = name.text
+            let age = age.text
+            let height = height.text
+            let weight = weight.text
+            let data = [
+                "name": name,
+                "age": age,
+                "height": height,
+                "weight": weight
+            ]
+            
+         
+                databaseRef.child("users_details").childByAutoId().setValue(data){error,_ in
+                    if let error = error{
+                        print("Error posting data: \(error.localizedDescription)")
+                    }else{
+                        print("Data posted successfully")
+                    }
+             
+                    let vc = UserViewController()
+
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: false, completion: nil)
+                }
+          
+        }
     }
