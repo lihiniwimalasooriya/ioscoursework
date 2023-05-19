@@ -24,7 +24,7 @@ class LoginViewController: UIViewController  {
         private let newUserButton = CustomButton(title: "New User? Create Account.", fontSize: .med)
         private let forgotPasswordButton = CustomButton(title: "Forgot Password?", fontSize: .small)
         
-      
+    //testing
         override func viewDidLoad() {
             super.viewDidLoad()
             self.setupUI()
@@ -118,6 +118,7 @@ class LoginViewController: UIViewController  {
                     let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                         alert.addAction(okAction)
                         present(alert, animated: true, completion: nil)
+                
             }
         }
         
