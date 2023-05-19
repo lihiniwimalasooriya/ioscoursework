@@ -24,7 +24,8 @@ class LoginViewController: UIViewController  {
         private let newUserButton = CustomButton(title: "New User? Create Account.", fontSize: .med)
         private let forgotPasswordButton = CustomButton(title: "Forgot Password?", fontSize: .small)
         
-    //testing
+    
+        //testing 2
         override func viewDidLoad() {
             super.viewDidLoad()
             self.setupUI()
