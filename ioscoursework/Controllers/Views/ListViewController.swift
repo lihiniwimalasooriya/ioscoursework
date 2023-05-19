@@ -52,9 +52,16 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource{
         return 10
     }
     
+   // func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    //    cell.textLabel?.text = "Test"
+   //     return cell
+   // }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Test"
-        return cell
-    }
-}
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            // Customize the cell based on the data received from Firebase
+            // For example, if you have an array of items, you can set the cell text as:
+            // cell.textLabel?.text = items[indexPath.row].title
+            return cell
+        }}
