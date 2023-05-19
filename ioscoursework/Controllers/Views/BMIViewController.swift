@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class BMIViewController: UIViewController {
+    
+    private let databaseRef = Database.database().reference()
     
     private let headerView = AuthHeaderView(title: "BMI Calculation", subTitle: " ")
     private let heightBMI = CustomTextField(fieldType: .heightBMI)
@@ -130,5 +134,28 @@ class BMIViewController: UIViewController {
                         
                         // Display or use the calculated BMI value
                     labelHeight.text = "\(bmi)"
-                }
+            
+            
+            
+            let heightBMI = heightBMI.text
+            let weightBMI = weightBMI.text
+     
+            let data = [
+                "heightBMI": heightBMI,
+                "weightBMI": weightBMI
+            ]
+            
+         
+                databaseRef.child("bmi").childByAutoId().setValue(data){error,_ in
+                    if let error = error{
+                        print("Error posting data: \(error.localizedDescription)")
+                    }else{
+                        print("Data posted successfully")
+                    }
+             
+                    let vc = BMIViewController()
+
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: false, completion: nil)
+                }       }
     }
