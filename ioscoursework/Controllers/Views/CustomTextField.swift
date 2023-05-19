@@ -20,6 +20,7 @@ class CustomTextField: UITextField {
         case gender
         case height
         case weight
+        case goal
         }
         
     private let authFieldType: CustomTextFieldType
@@ -51,38 +52,32 @@ class CustomTextField: UITextField {
                        self.isSecureTextEntry = true
                    case .heightBMI:
                        self.placeholder = "Height(cm)"
-                       self.textContentType = .oneTimeCode
-                       self.isSecureTextEntry = true
                        self.layer.borderWidth = 1.0
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    case .weightBMI:
                        self.placeholder = "Weight(kg)"
-                       self.textContentType = .oneTimeCode
-                       self.isSecureTextEntry = true
+                    //   self.textContentType = .oneTimeCode
+                   //    self.isSecureTextEntry = true
                        self.layer.borderWidth = 1.0
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    case .name:
                        self.placeholder = "Full Name"
-                       self.textContentType = .oneTimeCode
-                       self.isSecureTextEntry = true
                        self.layer.borderWidth = 1.0
-                       self.layer.borderColor = UIColor.lightGray.cgColor
+                      self.layer.borderColor = UIColor.lightGray.cgColor
                    case .age:
                        self.placeholder = "Age"
-                       self.textContentType = .oneTimeCode
-                       self.isSecureTextEntry = true
                        self.layer.borderWidth = 1.0
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    case .height:
                        self.placeholder = "Height(cm)"
-                       self.textContentType = .oneTimeCode
-                       self.isSecureTextEntry = true
                        self.layer.borderWidth = 1.0
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    case .weight:
                        self.placeholder = "Weight(kg)"
-                       self.textContentType = .oneTimeCode
-                       self.isSecureTextEntry = true
+                       self.layer.borderWidth = 1.0
+                       self.layer.borderColor = UIColor.lightGray.cgColor
+                   case .goal:
+                       self.placeholder = "Fitness Goal"
                        self.layer.borderWidth = 1.0
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    default:

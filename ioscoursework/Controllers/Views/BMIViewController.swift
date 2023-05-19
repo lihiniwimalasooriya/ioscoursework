@@ -134,28 +134,28 @@ class BMIViewController: UIViewController {
                         
                         // Display or use the calculated BMI value
                     labelHeight.text = "\(bmi)"
+        }
             
             
-            
-            let heightBMI = heightBMI.text
-            let weightBMI = weightBMI.text
+      //      let heightBMI = heightBMI.text
+      //      let weightBMI = weightBMI.text
      
-            let data = [
-                "heightBMI": heightBMI,
-                "weightBMI": weightBMI
-            ]
+     //       let data = [
+     //         "heightBMI": heightBMI,
+     //           "weightBMI": weightBMI
+      //      ]
             
          
-                databaseRef.child("bmi").childByAutoId().setValue(data){error,_ in
-                    if let error = error{
-                        print("Error posting data: \(error.localizedDescription)")
-                    }else{
-                        print("Data posted successfully")
-                    }
+       //         databaseRef.child("bmi").childByAutoId().setValue(data){error,_ in
+       //             if let error = error{
+        //                print("Error posting data: \(error.localizedDescription)")
+        //            }else{
+         //               print("Data posted successfully")
+         //           }
              
-                    let vc = BMIViewController()
+          //          let vc = BMIViewController()
 
-                    vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: false, completion: nil)
-                }       }
+          //          vc.modalPresentationStyle = .fullScreen
+           //         self.present(vc, animated: false, completion: nil)
+           //     }       }
     }

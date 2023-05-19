@@ -82,45 +82,51 @@ class LoginViewController: UIViewController  {
                 self.newUserButton.heightAnchor.constraint(equalToConstant: 44),
                 self.newUserButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
                 
-                self.forgotPasswordButton.topAnchor.constraint(equalTo: newUserButton.bottomAnchor, constant: 6),
-                self.forgotPasswordButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-                self.forgotPasswordButton.heightAnchor.constraint(equalToConstant: 44),
-                self.forgotPasswordButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
+       //         self.forgotPasswordButton.topAnchor.constraint(equalTo: newUserButton.bottomAnchor, constant: 6),
+        //        self.forgotPasswordButton.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+         //       self.forgotPasswordButton.heightAnchor.constraint(equalToConstant: 44),
+         //       self.forgotPasswordButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.85),
             ])
         }
         
-        @objc private func didTapSignIn() {
-            let enteredEmail = emailField.text
-            let enteredPassword = passwordField.text
-            let hardcodedEmail = "lihini"
-            let hardcodedPassword = "abc123"
-            let data = [
-                "username": enteredEmail,
-                "password": enteredPassword
-            ]
-            
-            if enteredEmail == hardcodedEmail && enteredPassword == hardcodedPassword {
-                databaseRef.child("users").childByAutoId().setValue(data){error,_ in
-                    if let error = error{
-                        print("Error posting data: \(error.localizedDescription)")
-                    }else{
-                        print("Data posted successfully")
-                    }
-                }
-                    let vc = TabBarViewController()
+    @objc private func didTapSignIn() {
+                
+                    let usersRef = Database.database().reference().child("users")
+                    let enteredUsername = emailField.text
+                    let enteredPassword = passwordField.text
 
-                    vc.modalPresentationStyle = .fullScreen
-                    self.present(vc, animated: false, completion: nil)
-            }
-            else {
-                    let alert = UIAlertController(title: "Login Failed", message: "Invalid email or password", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                        alert.addAction(okAction)
-                        present(alert, animated: true, completion: nil)
+                    usersRef.observeSingleEvent(of: .value) { snapshot in
+                        if let usersData = snapshot.value as? [String: Any] {
+                            for (_, userData) in usersData {
+                                if let userDict = userData as? [String: Any],
+                                   let username = userDict["username"] as? String,
+                                   let password = userDict["password"] as? String {
+                                    print(username)
+                                    print(password)
+                                    if username == enteredUsername && password == enteredPassword {
+                                        
+                                        // User authentication successful
+                                        let vc = TabBarViewController()
+
+                                        vc.modalPresentationStyle = .fullScreen
+                                        self.present(vc, animated: false, completion: nil)
+                                        print("Authentication successful")
+                                        
+                                        // Perform actions such as navigating to the next screen
+                                        return
+                                    }
+                                }
+                            }
+                            
+                            // User authentication failed
+                            print("Authentication failed")
+                            // Display an error message or perform any other necessary actions
+                        }
+                    }
+                    
+                   
                 
             }
-        }
-        
      //   @objc private func didTapNewUser() {
       //      let vc = RegisterViewController()
      //       self.navigationController?.pushViewController(vc, animated: true)

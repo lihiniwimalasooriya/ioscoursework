@@ -18,6 +18,7 @@ class UserViewController: UIViewController {
     private let age = CustomTextField(fieldType: .age)
     private let height = CustomTextField(fieldType: .height)
     private let weight = CustomTextField(fieldType: .weight)
+    private let goal = CustomTextField(fieldType: .goal)
     private let userButton = CustomButton(title: "Save", hasBackground: true, fontSize: .big)
         
                   
@@ -46,6 +47,7 @@ class UserViewController: UIViewController {
             self.view.addSubview(age)
             self.view.addSubview(height)
             self.view.addSubview(weight)
+            self.view.addSubview(goal)
             self.view.addSubview(userButton)
             
             headerView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,6 +55,7 @@ class UserViewController: UIViewController {
             age.translatesAutoresizingMaskIntoConstraints = false
             height.translatesAutoresizingMaskIntoConstraints = false
             weight.translatesAutoresizingMaskIntoConstraints = false
+            goal.translatesAutoresizingMaskIntoConstraints = false
             userButton.translatesAutoresizingMaskIntoConstraints = false
              
             NSLayoutConstraint.activate([
@@ -62,7 +65,7 @@ class UserViewController: UIViewController {
                     headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
                     // name constraints
-                    name.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 20),
+                    name.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 280),
                     name.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     name.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     name.heightAnchor.constraint(equalToConstant: 50),
@@ -84,7 +87,13 @@ class UserViewController: UIViewController {
                     weight.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     weight.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     weight.heightAnchor.constraint(equalToConstant: 50),
-
+                
+                    // goal constraints
+                    goal.topAnchor.constraint(equalTo: goal.bottomAnchor, constant: 20),
+                    goal.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+                    goal.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                    goal.heightAnchor.constraint(equalToConstant: 50),
+                
                     // userButton constraints
                     userButton.topAnchor.constraint(equalTo: weight.bottomAnchor, constant: 20),
                     userButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
