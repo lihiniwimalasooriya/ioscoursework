@@ -179,6 +179,10 @@ class BMIViewController: UIViewController {
                 let anotherVC = BMILessViewController()
                 // Configure anotherVC if needed
                 self.navigationController?.pushViewController(anotherVC, animated: true)
+            }else if bmi > 20 {
+                let anotherVC = UserViewController()
+                // Configure anotherVC if needed
+                self.navigationController?.pushViewController(anotherVC, animated: true)
             }
     }
 }
