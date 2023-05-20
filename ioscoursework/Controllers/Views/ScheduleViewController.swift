@@ -1,13 +1,13 @@
 //
-//  SearchResultViewController.swift
+//  ScheduleViewController.swift
 //  ioscoursework
 //
-//  Created by Lihini Wimalasooriya on 2023-05-07.
+//  Created by Lihini Wimalasooriya on 2023-05-20.
 //
 
 import UIKit
 
-class SearchResultViewController: UIViewController {
+class ScheduleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

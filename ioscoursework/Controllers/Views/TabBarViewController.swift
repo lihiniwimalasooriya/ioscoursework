@@ -17,7 +17,7 @@ class TabBarViewController: UITabBarController {
         let vc1 = ExerciseListViewController()
         let vc2 = UserViewController()
         let vc3 = BMIViewController()
-        let vc4 = ExerciseListViewController()
+        let vc4 = ScheduleViewController()
         
         vc1.title = "Exercises"
         vc2.title = "User Details"
@@ -37,7 +37,7 @@ class TabBarViewController: UITabBarController {
         nav1.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
         nav2.tabBarItem = UITabBarItem(title: "User Datails", image: UIImage(systemName: "person.fill"), tag: 1)
         nav3.tabBarItem = UITabBarItem(title: "BMI", image: UIImage(systemName: "gauge"), tag: 1)
-        nav4.tabBarItem = UITabBarItem(title: "Schedule", image: UIImage(systemName: "calender"), tag: 1)
+        nav4.tabBarItem = UITabBarItem(title: "Schedule", image: UIImage(systemName: "calendar"), tag: 1)
         
         nav1.navigationBar.prefersLargeTitles = true
         nav2.navigationBar.prefersLargeTitles = true

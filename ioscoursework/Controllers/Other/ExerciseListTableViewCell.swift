@@ -10,7 +10,7 @@ import UIKit
 class ExerciseListTableViewCell: UITableViewCell {
     //test
     var nameLabel: UILabel!
-    var countLabel: UILabel!
+   var countLabel: UILabel!
     var timeLabel: UILabel!
     var listImageView: UIImageView!
         
@@ -39,22 +39,29 @@ class ExerciseListTableViewCell: UITableViewCell {
         
     func configure(withData data: ExerciseList) {
         nameLabel.text = data.name
-        countLabel.text = String(data.count)
-        timeLabel.text = data.time
-       // if let imageUrl = URL(string: data.image_url) {
-       //     listImageView.kf.setImage(with: imageUrl)
-       // }
-            
-            // Load image using Kingfisher
-//
+       // countLabel.text = String(data.count)
+       // timeLabel.text = data.time
+       
+        if let imageUrl = URL(string: data.image_url) {
+                DispatchQueue.global().async {
+                    if let imageData = try? Data(contentsOf: imageUrl) {
+                        DispatchQueue.main.async {
+                            self.listImageView.image = UIImage(data: imageData)
+                        }
+                    }
+                }
+            } else {
+                // Set a default image if the URL is invalid or nil
+                self.listImageView.image = UIImage(named: "overweight")
+            }
         }
         
         func configureConstraints() {
             // Set up constraints for titleLabel, subtitleLabel, and customImageView
             // Adjust the constraints based on your desired layout
                 nameLabel.translatesAutoresizingMaskIntoConstraints = false
-                countLabel.translatesAutoresizingMaskIntoConstraints = false
-                timeLabel.translatesAutoresizingMaskIntoConstraints = false
+             //   countLabel.translatesAutoresizingMaskIntoConstraints = false
+              //  timeLabel.translatesAutoresizingMaskIntoConstraints = false
                 listImageView.translatesAutoresizingMaskIntoConstraints = false
                 
                 let constraints = [
@@ -74,7 +81,7 @@ class ExerciseListTableViewCell: UITableViewCell {
                     timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                     
                     // listImageView constraints
-                    listImageView.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8),
+                    listImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
                     listImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
                     listImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                     listImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),

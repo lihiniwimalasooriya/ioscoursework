@@ -175,14 +175,22 @@ class BMIViewController: UIViewController {
             let vc = BMIViewController()
                 vc.modalPresentationStyle = .fullScreen
                 self.present(vc, animated: false, completion: nil)
-            } else if bmi < 20 {
-                let anotherVC = BMIOverweightViewController()
+        } else if bmi < 18.5 {
+                let anotherVC = BMIUnderweightViewController()
                 // Configure anotherVC if needed
                 self.navigationController?.pushViewController(anotherVC, animated: true)
-            }else if bmi > 20 {
-                let anotherVC = UserViewController()
-                // Configure anotherVC if needed
+        }else if bmi < 25 && bmi >= 18.5{
+                let anotherVC = BMINormalViewController()
+            // Configure anotherVC if needed
                 self.navigationController?.pushViewController(anotherVC, animated: true)
-            }
+        }else if bmi < 30 && bmi >= 25{
+            let anotherVC = BMIOverweightViewController()
+        // Configure anotherVC if needed
+            self.navigationController?.pushViewController(anotherVC, animated: true)
+        }else if bmi > 30 {
+            let anotherVC = BMIObeseViewController()
+        // Configure anotherVC if needed
+            self.navigationController?.pushViewController(anotherVC, animated: true)
+        }
     }
 }
