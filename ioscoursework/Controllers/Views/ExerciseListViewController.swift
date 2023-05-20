@@ -26,6 +26,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource {
         // Register custom cell
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self
+      
         tableView.register(ExerciseListTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
         view.addSubview(tableView)
     }
