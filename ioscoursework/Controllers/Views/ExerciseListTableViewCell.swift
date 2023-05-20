@@ -6,12 +6,10 @@
 //
 
 import UIKit
-import Kingfisher
+//import Kingfisher
 
 class ExerciseListTableViewCell: UITableViewCell {
-
     //test
-    
     var nameLabel: UILabel!
     var countLabel: UILabel!
     var timeLabel: UILabel!
@@ -37,16 +35,16 @@ class ExerciseListTableViewCell: UITableViewCell {
         }
         
         required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
+            fatalError("init(coder:) has not been implemented.")
         }
         
     func configure(withData data: ExerciseList) {
         nameLabel.text = data.name
         countLabel.text = String(data.count)
         timeLabel.text = data.time
-        if let imageUrl = URL(string: data.image_url) {
-            listImageView.kf.setImage(with: imageUrl)
-        }
+       // if let imageUrl = URL(string: data.image_url) {
+       //     listImageView.kf.setImage(with: imageUrl)
+       // }
             
             // Load image using Kingfisher
 //
