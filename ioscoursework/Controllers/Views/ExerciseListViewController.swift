@@ -27,7 +27,7 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource {
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self
        // tableView.register(TableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
-        tableView.register(ExerciseListTableViewCell(), forCellReuseIdentifier: "CustomTableViewCell")
+        tableView.register(ExerciseListTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
         view.addSubview(tableView)
     }
     
@@ -35,9 +35,10 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource {
         databaseRef.child("users_details").observe(.childAdded, with: { (snapshot) in
             if let dataDict = snapshot.value as? [String: Any] {
                 // Convert the snapshot data to Exercise model
-                let data = ExerciseList(name: dataDict["name"] as? String ?? "",
-                                    age: dataDict["age"] as? String ?? "",
-                                    weight:dataDict["weight"] as? String ?? "")
+                let data = ExerciseList(image:dataDict["image"] as? String ?? "",
+                                        name: dataDict["name"] as? String ?? "",
+                                        count: dataDict["count"] as? String ?? "",
+                                        time:dataDict["time"] as? String ?? "")
                 print(data)
                 self.dataSource.append(data)
                 self.tableView.reloadData()
