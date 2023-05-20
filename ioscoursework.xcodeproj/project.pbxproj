@@ -32,6 +32,9 @@
 		0A64E03F2A07D135000A7084 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E03E2A07D135000A7084 /* ProfileViewController.swift */; };
 		0A64E0452A07D1A3000A7084 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E0442A07D1A3000A7084 /* SearchResultViewController.swift */; };
 		0A684C712A094CC3007178D1 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A684C702A094CC3007178D1 /* Extentions.swift */; };
+		0A6E169B2A18921500083412 /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E169A2A18921400083412 /* ExerciseList.swift */; };
+		0A6E169D2A18925E00083412 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E169C2A18925E00083412 /* ExerciseListViewController.swift */; };
+		0A6E169F2A18935A00083412 /* ExerciseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E169E2A18935A00083412 /* ExerciseListTableViewCell.swift */; };
 		0A8EDAA12A10FC7F00E8D066 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0A8EDAA02A10FC7F00E8D066 /* FirebaseAnalytics */; };
 		0A8EDAA32A10FC8700E8D066 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 0A8EDAA22A10FC8700E8D066 /* FirebaseAnalyticsSwift-Beta */; };
 		0A8EDAAB2A1120C700E8D066 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8EDAAA2A1120B900E8D066 /* UserViewController.swift */; };
@@ -72,6 +75,9 @@
 		0A64E03E2A07D135000A7084 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0A64E0442A07D1A3000A7084 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		0A684C702A094CC3007178D1 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
+		0A6E169A2A18921400083412 /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
+		0A6E169C2A18925E00083412 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
+		0A6E169E2A18935A00083412 /* ExerciseListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewCell.swift; sourceTree = "<group>"; };
 		0A8EDAAA2A1120B900E8D066 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		0AA90D652A1560EE00E4FAA8 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		0AA90D672A156E4F00E4FAA8 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				0A59CF502A0FB1F500F908E0 /* LoginUserRequest.swift */,
+				0A6E169A2A18921400083412 /* ExerciseList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,6 +208,8 @@
 				0A64E01A2A07C15D000A7084 /* HomeViewController.swift */,
 				0AA90D652A1560EE00E4FAA8 /* ListViewController.swift */,
 				0A4B1B5F2A17BE51007D75E9 /* BMIOverweightViewController.swift */,
+				0A6E169C2A18925E00083412 /* ExerciseListViewController.swift */,
+				0A6E169E2A18935A00083412 /* ExerciseListTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -297,9 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A8EDAAB2A1120C700E8D066 /* UserViewController.swift in Sources */,
+				0A6E169B2A18921500083412 /* ExerciseList.swift in Sources */,
 				0A5801342A0EC6C100487DB1 /* ForgetPwdViewController.swift in Sources */,
 				0AA90D662A1560EE00E4FAA8 /* ListViewController.swift in Sources */,
 				0A59CF3E2A0F478000F908E0 /* CustomButton.swift in Sources */,
+				0A6E169F2A18935A00083412 /* ExerciseListTableViewCell.swift in Sources */,
 				0A4B1B602A17BE51007D75E9 /* BMIOverweightViewController.swift in Sources */,
 				0A64E03B2A07D0F1000A7084 /* WelcomeViewController.swift in Sources */,
 				0A64E03F2A07D135000A7084 /* ProfileViewController.swift in Sources */,
@@ -317,6 +328,7 @@
 				0A64E0452A07D1A3000A7084 /* SearchResultViewController.swift in Sources */,
 				0A58013A2A0ED0B500487DB1 /* AuthHeaderView.swift in Sources */,
 				0A59CF532A0FF94A00F908E0 /* BMIViewController.swift in Sources */,
+				0A6E169D2A18925E00083412 /* ExerciseListViewController.swift in Sources */,
 				0A64E0192A07C15D000A7084 /* SceneDelegate.swift in Sources */,
 				0A684C712A094CC3007178D1 /* Extentions.swift in Sources */,
 				0A59CF402A0F53F500F908E0 /* RegisterViewController.swift in Sources */,

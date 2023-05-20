@@ -110,11 +110,13 @@ class UserViewController: UIViewController {
             let age = age.text
             let height = height.text
             let weight = weight.text
+            let goal = goal.text
             let data = [
                 "name": name,
                 "age": age,
                 "height": height,
-                "weight": weight
+                "weight": weight,
+                "goal": goal
             ]
             
          

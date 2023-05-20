@@ -15,7 +15,10 @@ class ListViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
-
+    
+    // Define an array to hold your data
+    var items: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,38 +33,40 @@ class ListViewController: UIViewController {
             timelineTableView.delegate = self
             timelineTableView.dataSource = self
 
-            // Set up Firebase database reference and observe for real-time updates
-            let databaseRef = Database.database().reference()
-            databaseRef.child("user_details").observe(.value) { [weak self] (snapshot) in
-                // Handle the received data here
-                // You can parse the data from the snapshot and update your table view
-                self?.timelineTableView.reloadData()
+        let databaseRef = Database.database().reference()
+                databaseRef.child("user_details").observe(.value) { [weak self] (snapshot) in
+                    // Handle the received data here
+                    // Clear the existing data array
+                    self?.items.removeAll()
+                    
+                    // Iterate through the snapshot's children
+                    for case let childSnapshot as DataSnapshot in snapshot.children {
+                        // Extract the value from the snapshot and add it to the data array
+                        if let value = childSnapshot.value as? String {
+                            self?.items.append(value)
+                        }
+                    }
+                    
+                    // Reload the table view to display the updated data
+                    self?.timelineTableView.reloadData()
+                }
             }
-        
-    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        timelineTableView.frame = view.frame
+        timelineTableView.frame = view.bounds
     }
     
 }
 
-extension ListViewController: UITableViewDelegate, UITableViewDataSource{
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return items.count
     }
     
-   // func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //    let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    //    cell.textLabel?.text = "Test"
-   //     return cell
-   // }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            // Customize the cell based on the data received from Firebase
-            // For example, if you have an array of items, you can set the cell text as:
-            // cell.textLabel?.text = items[indexPath.row].title
-            return cell
-        }}
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = items[indexPath.row]
+        return cell
+    }
+}
