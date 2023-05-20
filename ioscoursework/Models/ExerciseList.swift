@@ -12,5 +12,5 @@ struct ExerciseList {
     let image_url: String
     let name: String
     //let count: Int
-    let time: String
+    //let time: String
 }

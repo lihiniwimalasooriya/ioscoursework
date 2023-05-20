@@ -1,16 +1,17 @@
 //
-//  ExerciseListTableViewCell.swift
+//  DetailTableViewCell.swift
 //  ioscoursework
 //
-//  Created by Lihini Wimalasooriya on 2023-05-19.
+//  Created by Lihini Wimalasooriya on 2023-05-20.
 //
 
 import UIKit
 
-class ExerciseListTableViewCell: UITableViewCell {
-        var nameLabel: UILabel!
-        //var countLabel: UILabel!
-        //var timeLabel: UILabel!
+class DetailTableViewCell: UITableViewCell {
+
+    var nameLabel: UILabel!
+        var countLabel: UILabel!
+        var timeLabel: UILabel!
         var listImageView: UIImageView!
         var actionButton: UIButton!
             override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -18,15 +19,15 @@ class ExerciseListTableViewCell: UITableViewCell {
                 
                 // Create and configure the UI elements
                 nameLabel = UILabel()
-                //countLabel = UILabel()
-                //timeLabel = UILabel()
+                countLabel = UILabel()
+                timeLabel = UILabel()
                 listImageView = UIImageView()
                 
                 
                 // Add UI elements to the cell's contentView
                 contentView.addSubview(nameLabel)
-                //contentView.addSubview(countLabel)
-                //contentView.addSubview(timeLabel)
+                contentView.addSubview(countLabel)
+                contentView.addSubview(timeLabel)
                 contentView.addSubview(listImageView)
                 actionButton = UIButton(type: .system)
                 actionButton.setTitle("VIEW", for: .normal)
@@ -41,10 +42,10 @@ class ExerciseListTableViewCell: UITableViewCell {
                 fatalError("init(coder:) has not been implemented.")
             }
             
-        func configure(withData data: ExerciseList) {
+        func configure(withData data: Detail) {
             nameLabel.text = data.name
-            //countLabel.text = String(data.count)
-            //timeLabel.text = data.time
+            
+        
             if let imageUrl = URL(string: data.image_url) {
                   DispatchQueue.global().async {
                       if let imageData = try? Data(contentsOf: imageUrl) {
@@ -57,17 +58,17 @@ class ExerciseListTableViewCell: UITableViewCell {
                   // Set a default image if the URL is invalid or nil
                   self.listImageView.image = UIImage(named: "BMI")
               }
-        
-                // Load image using Kingfisher
-    //
+            
+            countLabel.text = String(data.count)
+            timeLabel.text = data.time
             }
             
             func configureConstraints() {
                 // Set up constraints for titleLabel, subtitleLabel, and customImageView
                 // Adjust the constraints based on your desired layout
                     nameLabel.translatesAutoresizingMaskIntoConstraints = false
-                    //countLabel.translatesAutoresizingMaskIntoConstraints = false
-                    //timeLabel.translatesAutoresizingMaskIntoConstraints = false
+                    countLabel.translatesAutoresizingMaskIntoConstraints = false
+                    timeLabel.translatesAutoresizingMaskIntoConstraints = false
                     listImageView.translatesAutoresizingMaskIntoConstraints = false
                     
                     let constraints = [
@@ -77,22 +78,22 @@ class ExerciseListTableViewCell: UITableViewCell {
                         nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         
                         // countLabel constraints
-                       // countLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
-                        //countLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                        //countLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+                        countLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+                        countLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                        countLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         
                         // timeLabel constraints
-                        //timeLabel.topAnchor.constraint(equalTo: countLabel.bottomAnchor, constant: 8),
-                       // timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                       // timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+                        timeLabel.topAnchor.constraint(equalTo: countLabel.bottomAnchor, constant: 8),
+                        timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                        timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         
                         // listImageView constraints
-                        listImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+                        listImageView.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8),
                         listImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
                         listImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         listImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
                         listImageView.heightAnchor.constraint(equalToConstant: 200),
-                        actionButton.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor),
+                        actionButton.centerYAnchor.constraint(equalTo: countLabel.centerYAnchor),
                         actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -18),
      
                     ]
