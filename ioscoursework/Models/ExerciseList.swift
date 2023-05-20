@@ -8,8 +8,8 @@
 import Foundation
 
 struct ExerciseList {
-    let image: String
+    let image_url: String
     let name: String
-    let count: String
+    let count: Int
     let time: String
 }

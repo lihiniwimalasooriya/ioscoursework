@@ -26,18 +26,17 @@ class ExerciseListViewController: UIViewController,UITableViewDataSource {
         // Register custom cell
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView.dataSource = self
-       // tableView.register(TableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
         tableView.register(ExerciseListTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
         view.addSubview(tableView)
     }
     
     func loadDataFromFirebase() {
-        databaseRef.child("users_details").observe(.childAdded, with: { (snapshot) in
+        databaseRef.child("exercises").observe(.childAdded, with: { (snapshot) in
             if let dataDict = snapshot.value as? [String: Any] {
                 // Convert the snapshot data to Exercise model
-                let data = ExerciseList(image:dataDict["image"] as? String ?? "",
+                let data = ExerciseList(image_url:dataDict["image_url"] as? String ?? "",
                                         name: dataDict["name"] as? String ?? "",
-                                        count: dataDict["count"] as? String ?? "",
+                                        count: dataDict["count"] as? Int ?? 0,
                                         time:dataDict["time"] as? String ?? "")
                 print(data)
                 self.dataSource.append(data)

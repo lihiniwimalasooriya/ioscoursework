@@ -20,9 +20,9 @@ class BMIOverweightViewController: UIViewController {
     private func setupOverweight() {
         self.view.backgroundColor = .systemBackground
         let backgroundImage = UIImageView(image: UIImage(named: "overweight"))
-             backgroundImage.contentMode = .scaleAspectFill
-             backgroundImage.frame = view.bounds
-             view.addSubview(backgroundImage)
-             view.sendSubviewToBack(backgroundImage)
+        backgroundImage.contentMode = .top
+        backgroundImage.frame = view.bounds
+        view.addSubview(backgroundImage)
+        view.sendSubviewToBack(backgroundImage)
     }
 }
