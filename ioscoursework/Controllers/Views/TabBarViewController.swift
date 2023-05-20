@@ -14,7 +14,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let vc1 = HomeViewController()
+        let vc1 = ExerciseListViewController()
         let vc2 = UserViewController()
         let vc3 = BMIViewController()
         let vc4 = ExerciseListViewController()
@@ -22,7 +22,7 @@ class TabBarViewController: UITabBarController {
         vc1.title = "Exercise List"
         vc2.title = "User Details"
         vc3.title = "BMI"
-        vc4.title = "test"
+        vc4.title = "Schedule"
         
         vc1.navigationItem.largeTitleDisplayMode = .always
        vc2.navigationItem.largeTitleDisplayMode = .always
@@ -37,7 +37,7 @@ class TabBarViewController: UITabBarController {
         nav1.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
         nav2.tabBarItem = UITabBarItem(title: "User Datails", image: UIImage(systemName: "person.fill"), tag: 1)
         nav3.tabBarItem = UITabBarItem(title: "BMI", image: UIImage(systemName: "gauge"), tag: 1)
-        nav4.tabBarItem = UITabBarItem(title: "test", image: UIImage(systemName: "house"), tag: 1)
+        nav4.tabBarItem = UITabBarItem(title: "Schedule", image: UIImage(systemName: "schedule"), tag: 1)
         
         nav1.navigationBar.prefersLargeTitles = true
         nav2.navigationBar.prefersLargeTitles = true
