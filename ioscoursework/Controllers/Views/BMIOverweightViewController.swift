@@ -24,7 +24,7 @@ class BMIOverweightViewController: UIViewController {
             backgroundImage.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height * 0.4) // Adjust the height as per your requirements
             
             let label = UILabel()
-            label.text = "You are overweight \n Get your fitness plan"
+            label.text = "You are Overweight \n Get your fitness plan"
             label.textAlignment = .center
             label.textColor = .white
             label.font = UIFont.boldSystemFont(ofSize: 18)
