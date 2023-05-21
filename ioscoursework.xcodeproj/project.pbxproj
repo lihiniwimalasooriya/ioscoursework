@@ -28,6 +28,9 @@
 		0A64E0392A07D0D0000A7084 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E0382A07D0D0000A7084 /* AuthViewController.swift */; };
 		0A64E03B2A07D0F1000A7084 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E03A2A07D0F1000A7084 /* WelcomeViewController.swift */; };
 		0A64E03F2A07D135000A7084 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A64E03E2A07D135000A7084 /* ProfileViewController.swift */; };
+		0A67B6BC2A19D77D00AB7F79 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67B6BB2A19D77D00AB7F79 /* Schedule.swift */; };
+		0A67B6BE2A19D7D400AB7F79 /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67B6BD2A19D7D400AB7F79 /* ScheduleTableViewCell.swift */; };
+		0A67B6C02A19E1FC00AB7F79 /* ScheduleAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67B6BF2A19E1FC00AB7F79 /* ScheduleAddViewController.swift */; };
 		0A684C712A094CC3007178D1 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A684C702A094CC3007178D1 /* Extentions.swift */; };
 		0A6E169B2A18921500083412 /* ExerciseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E169A2A18921400083412 /* ExerciseList.swift */; };
 		0A6E169D2A18925E00083412 /* ExerciseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6E169C2A18925E00083412 /* ExerciseListViewController.swift */; };
@@ -74,6 +77,9 @@
 		0A64E0382A07D0D0000A7084 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		0A64E03A2A07D0F1000A7084 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0A64E03E2A07D135000A7084 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0A67B6BB2A19D77D00AB7F79 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		0A67B6BD2A19D7D400AB7F79 /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
+		0A67B6BF2A19E1FC00AB7F79 /* ScheduleAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAddViewController.swift; sourceTree = "<group>"; };
 		0A684C702A094CC3007178D1 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 		0A6E169A2A18921400083412 /* ExerciseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseList.swift; sourceTree = "<group>"; };
 		0A6E169C2A18925E00083412 /* ExerciseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 				0A59CF502A0FB1F500F908E0 /* LoginUserRequest.swift */,
 				0A6E169A2A18921400083412 /* ExerciseList.swift */,
 				0A72EB502A1937C200EA585B /* Detail.swift */,
+				0A67B6BB2A19D77D00AB7F79 /* Schedule.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +207,7 @@
 				0A72EB522A19404E00EA585B /* BMIUnderweightViewController.swift */,
 				0A72EB542A19417E00EA585B /* BMINormalViewController.swift */,
 				0A72EB562A19424F00EA585B /* BMIObeseViewController.swift */,
+				0A67B6BF2A19E1FC00AB7F79 /* ScheduleAddViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,6 +219,7 @@
 				0A59CF3D2A0F478000F908E0 /* CustomButton.swift */,
 				0A59CF3B2A0F403D00F908E0 /* CustomTextField.swift */,
 				0A7D1DE22A19702000EA199F /* DetailTableViewCell.swift */,
+				0A67B6BD2A19D7D400AB7F79 /* ScheduleTableViewCell.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -311,6 +320,9 @@
 				0A72EB512A1937C200EA585B /* Detail.swift in Sources */,
 				0A5801342A0EC6C100487DB1 /* ForgetPwdViewController.swift in Sources */,
 				0AA90D662A1560EE00E4FAA8 /* ListViewController.swift in Sources */,
+				0A67B6BC2A19D77D00AB7F79 /* Schedule.swift in Sources */,
+				0A67B6C02A19E1FC00AB7F79 /* ScheduleAddViewController.swift in Sources */,
+				0A67B6BE2A19D7D400AB7F79 /* ScheduleTableViewCell.swift in Sources */,
 				0A59CF3E2A0F478000F908E0 /* CustomButton.swift in Sources */,
 				0A6E169F2A18935A00083412 /* ExerciseListTableViewCell.swift in Sources */,
 				0A4B1B602A17BE51007D75E9 /* BMIOverweightViewController.swift in Sources */,

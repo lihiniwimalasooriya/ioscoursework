@@ -37,7 +37,7 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                     let data = Detail(
                         name: dataDict["name"] as? String ?? "",
                         image_url: dataDict["image_url"] as? String ?? "",
-                        count: dataDict["count"] as? Int ?? 0,
+                        count: dataDict["count"] as? String ?? "",
                         time: dataDict["time"] as? String ?? "",
                         body_part: dataDict["body_part"] as? String ?? ""
                     )

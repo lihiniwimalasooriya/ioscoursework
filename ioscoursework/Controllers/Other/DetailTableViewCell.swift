@@ -9,12 +9,12 @@ import UIKit
 
 class DetailTableViewCell: UITableViewCell {
 
-    var nameLabel: UILabel!
+        var nameLabel: UILabel!
         var countLabel: UILabel!
         var timeLabel: UILabel!
         var body_partLabel: UILabel!
         var listImageView: UIImageView!
-        var actionButton: UIButton!
+        //var actionButton: UIButton!
             override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
                 super.init(style: style, reuseIdentifier: reuseIdentifier)
                 
@@ -32,10 +32,10 @@ class DetailTableViewCell: UITableViewCell {
                 contentView.addSubview(timeLabel)
                 contentView.addSubview(body_partLabel)
                 contentView.addSubview(listImageView)
-                actionButton = UIButton(type: .system)
-                actionButton.setTitle("VIEW", for: .normal)
-                actionButton.translatesAutoresizingMaskIntoConstraints = false
-                contentView.addSubview(actionButton)
+              //  actionButton = UIButton(type: .system)
+              //  actionButton.setTitle("VIEW", for: .normal)
+              //  actionButton.translatesAutoresizingMaskIntoConstraints = false
+              //  contentView.addSubview(actionButton)
                 
                 // Configure UI element properties and layout constraints
                 configureConstraints()
@@ -48,6 +48,13 @@ class DetailTableViewCell: UITableViewCell {
         func configure(withData data: Detail) {
             nameLabel.text = data.name
             
+            //bold exercise name
+            let boldFont = UIFont.boldSystemFont(ofSize: nameLabel.font.pointSize)
+                let attributes: [NSAttributedString.Key: Any] = [
+                    .font: boldFont
+                ]
+                let attributedString = NSAttributedString(string: data.name, attributes: attributes)
+                nameLabel.attributedText = attributedString
         
             if let imageUrl = URL(string: data.image_url) {
                   DispatchQueue.global().async {
@@ -64,6 +71,7 @@ class DetailTableViewCell: UITableViewCell {
             
             countLabel.text = String(data.count)
             timeLabel.text = data.time
+            body_partLabel.text = data.body_part
             }
             
             func configureConstraints() {
@@ -97,13 +105,13 @@ class DetailTableViewCell: UITableViewCell {
                         body_partLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         
                         // listImageView constraints
-                        listImageView.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8),
+                        listImageView.topAnchor.constraint(equalTo: body_partLabel.bottomAnchor, constant: 8),
                         listImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
                         listImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         listImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
                         listImageView.heightAnchor.constraint(equalToConstant: 200),
-                        actionButton.centerYAnchor.constraint(equalTo: countLabel.centerYAnchor),
-                        actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -18),
+                      //  actionButton.centerYAnchor.constraint(equalTo: countLabel.centerYAnchor),
+                      //  actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -18),
      
                     ]
                     

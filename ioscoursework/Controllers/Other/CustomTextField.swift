@@ -21,6 +21,9 @@ class CustomTextField: UITextField {
         case height
         case weight
         case goal
+        case planname
+        case datePicker
+        case timePicker
         }
         
     private let authFieldType: CustomTextFieldType
@@ -78,6 +81,18 @@ class CustomTextField: UITextField {
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    case .goal:
                        self.placeholder = "Fitness Goal"
+                       self.layer.borderWidth = 1.0
+                       self.layer.borderColor = UIColor.lightGray.cgColor
+                   case .planname:
+                       self.placeholder = "Plan Description"
+                       self.layer.borderWidth = 1.0
+                       self.layer.borderColor = UIColor.lightGray.cgColor
+                   case .datePicker:
+                       self.placeholder = "Date"
+                       self.layer.borderWidth = 1.0
+                       self.layer.borderColor = UIColor.lightGray.cgColor
+                   case .timePicker:
+                       self.placeholder = "Time"
                        self.layer.borderWidth = 1.0
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    default:

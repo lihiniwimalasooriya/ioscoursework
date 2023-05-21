@@ -25,12 +25,12 @@ class TabBarViewController: UITabBarController {
         vc4.title = "Schedule"
         
         vc1.navigationItem.largeTitleDisplayMode = .always
-       vc2.navigationItem.largeTitleDisplayMode = .always
+        vc2.navigationItem.largeTitleDisplayMode = .always
         vc3.navigationItem.largeTitleDisplayMode = .always
         vc4.navigationItem.largeTitleDisplayMode = .always
         
         let nav1 = UINavigationController(rootViewController: vc1)
-       let nav2 = UINavigationController(rootViewController: vc2)
+        let nav2 = UINavigationController(rootViewController: vc2)
         let nav3 = UINavigationController(rootViewController: vc3)
         let nav4 = UINavigationController(rootViewController: vc4)
         
