@@ -47,11 +47,11 @@ class ScheduleAddViewController: UIViewController {
             timePicker.addTarget(self, action: #selector(timePickerValueChanged), for: .valueChanged)
             
             self.view.backgroundColor = .systemBackground
-            let backgroundImage = UIImageView(image: UIImage(named: "schedule"))
-                 backgroundImage.contentMode = .scaleAspectFill
-                 backgroundImage.frame = view.bounds
-                 view.addSubview(backgroundImage)
-                 view.sendSubviewToBack(backgroundImage)
+            //let backgroundImage = UIImageView(image: UIImage(named: "schedule"))
+            //     backgroundImage.contentMode = .scaleAspectFill
+            //     backgroundImage.frame = view.bounds
+            //     view.addSubview(backgroundImage)
+            //     view.sendSubviewToBack(backgroundImage)
          
             self.view.addSubview(headerView)
             self.view.addSubview(planname)
