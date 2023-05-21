@@ -22,8 +22,6 @@ class ScheduleAddViewController: UIViewController {
     private let addButton = CustomButton(title: "Add", hasBackground: true, fontSize: .big)
     private let myButton = CustomButton(title: "My Schedule", hasBackground: true, fontSize: .big)
     
-
-                  
         override func viewDidLoad() {
             super.viewDidLoad()
 
@@ -81,15 +79,13 @@ class ScheduleAddViewController: UIViewController {
                     planname.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     planname.heightAnchor.constraint(equalToConstant: 50),
                 
-                // Remove the line:
-                datePicker.topAnchor.constraint(equalTo: planname.bottomAnchor, constant: 20),
+                    datePicker.topAnchor.constraint(equalTo: planname.bottomAnchor, constant: 20),
                 
                     // age constraints
                     datePicker.topAnchor.constraint(equalTo: planname.bottomAnchor, constant: 20),
                     datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     datePicker.heightAnchor.constraint(equalToConstant: 50),
-                
                 
                     // height constraints
                     timePicker.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 20),
@@ -109,9 +105,8 @@ class ScheduleAddViewController: UIViewController {
                 myButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                 myButton.heightAnchor.constraint(equalToConstant: 50),
                 ])
-            
-            
         }
+    
         @objc private func didTapAdd() {
             
             let name = planname.text
@@ -160,5 +155,4 @@ class ScheduleAddViewController: UIViewController {
         // Configure anotherVC if needed
         self.navigationController?.pushViewController(VC, animated: true)
     }
-    
 }

@@ -22,22 +22,23 @@ class HomePageViewController: UIViewController {
     private let weightBMI = CustomTextField(fieldType: .weightBMI)
     private let bmiButton = CustomButton(title: "Sign In", hasBackground: true, fontSize: .big)
     private let labelHeight: UILabel = {
-            let labelHeight = UILabel()
-            labelHeight.textAlignment = .center
-            labelHeight.text = ""
-            labelHeight.font = UIFont.boldSystemFont(ofSize: 20)
-            labelHeight.textColor = .black
+        let labelHeight = UILabel()
+          
+        labelHeight.textAlignment = .center
+        labelHeight.text = ""
+        labelHeight.font = UIFont.boldSystemFont(ofSize: 20)
+        labelHeight.textColor = .black
             
-            return labelHeight
+        return labelHeight
         }()
     private let labelWeight: UILabel = {
-            let labelWeight = UILabel()
-            labelWeight.textAlignment = .center
-            labelWeight.text = ""
-            labelWeight.font = UIFont.boldSystemFont(ofSize: 20)
-            labelWeight.textColor = .black
+        let labelWeight = UILabel()
+        labelWeight.textAlignment = .center
+        labelWeight.text = ""
+        labelWeight.font = UIFont.boldSystemFont(ofSize: 20)
+        labelWeight.textColor = .black
             
-            return labelWeight
+        return labelWeight
         }()
     
     override func viewDidLoad() {
@@ -69,14 +70,13 @@ class HomePageViewController: UIViewController {
         bmiButton.translatesAutoresizingMaskIntoConstraints = false
         labelWeight.translatesAutoresizingMaskIntoConstraints = false
         labelHeight.translatesAutoresizingMaskIntoConstraints = false
-        
     }
+    
     @objc private func didTapBMI() {
         
-        guard let heightString = heightBMI.text,
+    guard let heightString = heightBMI.text,
                          let height = Double(heightString),
                          height > 0 else {
-                       //height.text = "Error"
                        labelHeight.text = "Error"
                        return
                    }
@@ -84,7 +84,6 @@ class HomePageViewController: UIViewController {
                    guard let weightString = weightBMI.text,
                          let weight = Double(weightString),
                          weight > 0 else {
-                      // label1.text = "Error"
                        weightBMI.text = "Error"
                        return
                        
@@ -92,7 +91,7 @@ class HomePageViewController: UIViewController {
                 let heightInMeters = height / 100 // Convert height from centimeters to meters
                 let bmi = weight / (heightInMeters * heightInMeters)
                     
-                    // Display or use the calculated BMI value
+                // Display or use the calculated BMI value
                 labelHeight.text = "\(bmi)"
             }
 }

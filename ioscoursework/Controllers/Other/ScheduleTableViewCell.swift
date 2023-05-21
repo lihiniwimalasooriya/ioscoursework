@@ -9,7 +9,7 @@ import UIKit
 
 class ScheduleTableViewCell: UITableViewCell {
 
-    var nameLabel: UILabel!
+       var nameLabel: UILabel!
        var dateLabel: UILabel!
        var timeLabel: UILabel!
        var actionButton: UIButton!
@@ -64,8 +64,8 @@ class ScheduleTableViewCell: UITableViewCell {
                 timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
                 timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                 timeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
-                ]
+            ]
                    
-                NSLayoutConstraint.activate(constraints)
+            NSLayoutConstraint.activate(constraints)
            }
    }

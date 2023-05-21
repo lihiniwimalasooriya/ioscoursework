@@ -15,8 +15,7 @@ class WelcomeViewController: UIViewController {
         imageView.image = UIImage(named: "Images")
         return imageView
     }()
-    
-    
+        
     private let signInButton: UIButton = {
        let button = UIButton()
         button.backgroundColor = .white
@@ -61,5 +60,4 @@ class WelcomeViewController: UIViewController {
     private func handleSignIn (sccess: Bool){
         //login user
     }
-
 }

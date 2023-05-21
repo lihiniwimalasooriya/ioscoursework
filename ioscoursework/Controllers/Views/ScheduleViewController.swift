@@ -11,8 +11,9 @@ import FirebaseDatabase
 
 class ScheduleViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    private let headerView = AuthHeaderView(title: "My Schedule", subTitle: "***")
-    var tableView: UITableView!
+            private let headerView = AuthHeaderView(title: "My Schedule", subTitle: "***")
+    
+            var tableView: UITableView!
             var databaseRef: DatabaseReference!
             var dataSource: [Schedule] = []
             
@@ -42,7 +43,6 @@ class ScheduleViewController: UIViewController,UITableViewDataSource,UITableView
                 let buttonConstraints = [
                      button.topAnchor.constraint(equalTo: view.topAnchor, constant: 16),
                      button.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-                     // Add more constraints as needed
                  ]
                  NSLayoutConstraint.activate(buttonConstraints)
             }
@@ -81,27 +81,26 @@ class ScheduleViewController: UIViewController,UITableViewDataSource,UITableView
               print("Selected document ID:", documentID)
               let detailViewController = DetailViewController()
                     
-                    // Set the document ID property of the destination view controller
+            // Set the document ID property of the destination view controller
             detailViewController.documentId = documentID
                     
-                    // Present the destination view controller
+            // Present the destination view controller
             self.navigationController?.pushViewController(detailViewController, animated: true)
-
-              
-              // Perform any operations based on the selected document ID
           }
-            func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-                return dataSource.count
-            }
+    
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return dataSource.count
+        }
             
-            func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! ScheduleTableViewCell
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! ScheduleTableViewCell
                 
-                let data = dataSource[indexPath.row]
-                cell.configure(withData: data)
+            let data = dataSource[indexPath.row]
+            cell.configure(withData: data)
                 
-                return cell
-            }
+            return cell
+        }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          return 120 // Set the desired height for the table view cell
      }

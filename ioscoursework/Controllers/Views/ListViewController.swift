@@ -21,17 +21,13 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //view.addSubview(timelineTableView)
-        //timelineTableView.delegate = self
-        //timelineTableView.dataSource = self
         
         // Configure Firebase
-            FirebaseApp.configure()
+        FirebaseApp.configure()
 
-            view.addSubview(timelineTableView)
-            timelineTableView.delegate = self
-            timelineTableView.dataSource = self
+        view.addSubview(timelineTableView)
+        timelineTableView.delegate = self
+        timelineTableView.dataSource = self
 
         let databaseRef = Database.database().reference()
                 databaseRef.child("user_details").observe(.value) { [weak self] (snapshot) in

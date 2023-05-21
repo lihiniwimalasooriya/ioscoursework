@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 class DetailViewController: UIViewController, UITableViewDataSource {
-    var tableView: UITableView!
+        var tableView: UITableView!
         var databaseRef: DatabaseReference!
         var dataSource: [Detail] = []
         var documentId: String!
