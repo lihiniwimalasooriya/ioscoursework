@@ -8,7 +8,6 @@
 import Foundation
 
 struct Detail {
-    
     let name: String
     let image_url: String
     let count: String

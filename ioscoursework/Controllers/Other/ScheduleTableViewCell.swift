@@ -13,29 +13,22 @@ class ScheduleTableViewCell: UITableViewCell {
        var dateLabel: UILabel!
        var timeLabel: UILabel!
        var actionButton: UIButton!
-           override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-               super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
+        override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+            super.init(style: style, reuseIdentifier: reuseIdentifier)
                
-               // Create and configure the UI elements
-               nameLabel = UILabel()
-               dateLabel = UILabel()
-               timeLabel = UILabel()
-               //listImageView = UIImageView()
+            // Create and configure the UI elements
+            nameLabel = UILabel()
+            dateLabel = UILabel()
+            timeLabel = UILabel()
                
+            // Add UI elements to the cell's contentView
+            contentView.addSubview(nameLabel)
+            contentView.addSubview(dateLabel)
+            contentView.addSubview(timeLabel)
                
-               // Add UI elements to the cell's contentView
-               contentView.addSubview(nameLabel)
-              contentView.addSubview(dateLabel)
-               contentView.addSubview(timeLabel)
-               
-               //contentView.addSubview(listImageView)
-              // actionButton = UIButton(type: .system)
-              // actionButton.setTitle("VIEW", for: .normal)
-              // actionButton.translatesAutoresizingMaskIntoConstraints = false
-              // contentView.addSubview(actionButton)
-               
-               // Configure UI element properties and layout constraints
-               configureConstraints()
+            // Configure UI element properties and layout constraints
+            configureConstraints()
            }
            
            required init?(coder aDecoder: NSCoder) {
@@ -46,46 +39,33 @@ class ScheduleTableViewCell: UITableViewCell {
            nameLabel.text = data.name
            dateLabel.text = String(data.date)
            timeLabel.text = data.time
-
-           }
+        }
            
-           func configureConstraints() {
-               // Set up constraints for titleLabel, subtitleLabel, and customImageView
-               // Adjust the constraints based on your desired layout
-                   nameLabel.translatesAutoresizingMaskIntoConstraints = false
-                   dateLabel.translatesAutoresizingMaskIntoConstraints = false
-                   timeLabel.translatesAutoresizingMaskIntoConstraints = false
-                 //  listImageView.translatesAutoresizingMaskIntoConstraints = false
+        func configureConstraints() {
+            // Set up constraints for titleLabel, subtitleLabel, and customImageView
+            // Adjust the constraints based on your desired layout
+            nameLabel.translatesAutoresizingMaskIntoConstraints = false
+            dateLabel.translatesAutoresizingMaskIntoConstraints = false
+            timeLabel.translatesAutoresizingMaskIntoConstraints = false
                    
-                   let constraints = [
-                       // nameLabel constraints
-                       nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-                               nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                               nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            let constraints = [
+                // nameLabel constraints
+                nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+                nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
 
-                               // dateLabel constraints
-                               dateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
-                               dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                               dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+                // dateLabel constraints
+                dateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+                dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                dateLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
 
-                               // timeLabel constraints
-                               timeLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 8),
-                               timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                               timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-                               timeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8) // Add bottom constraint to determine the height
-
-                       
-                       // listImageView constraints
-                      // listImageView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
-                      // listImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                      // listImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-                      // listImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-                     //  listImageView.heightAnchor.constraint(equalToConstant: 200),
-                      // actionButton.centerYAnchor.constraint(equalTo: timeLabel.centerYAnchor),
-                     //  actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -18),
-    
-                   ]
+                // timeLabel constraints
+                timeLabel.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 8),
+                timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+                timeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+                ]
                    
-                   NSLayoutConstraint.activate(constraints)
+                NSLayoutConstraint.activate(constraints)
            }
    }

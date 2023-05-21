@@ -17,13 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let  window = UIWindow(frame: UIScreen.main.bounds)
         
-     
-            let navVC = UINavigationController(rootViewController: WelcomeViewController())
-            navVC.navigationBar.prefersLargeTitles = true
-            navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
-            window.rootViewController = navVC
-       
-        
+        let navVC = UINavigationController(rootViewController: WelcomeViewController())
+        navVC.navigationBar.prefersLargeTitles = true
+        navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+        window.rootViewController = navVC
+              
         window.makeKeyAndVisible()
         self.window = window
         
@@ -31,8 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         

@@ -11,6 +11,4 @@ struct ExerciseList {
     let id: String
     let image_url: String
     let name: String
-    //let count: Int
-    //let time: String
 }

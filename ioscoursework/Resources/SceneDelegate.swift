@@ -12,20 +12,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let  window = UIWindow(windowScene: windowScene)
         
-    
-            let navVC = UINavigationController(rootViewController: WelcomeViewController())
-            navVC.navigationBar.prefersLargeTitles = true
-            navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
-            window.rootViewController = navVC
+        let navVC = UINavigationController(rootViewController: WelcomeViewController())
+        navVC.navigationBar.prefersLargeTitles = true
+        navVC.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+        window.rootViewController = navVC
        
-        
         window.makeKeyAndVisible()
         self.window = window
         self.window?.makeKeyAndVisible()
@@ -37,14 +34,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window = window
             self.window?.makeKeyAndVisible()
         }
-        
-       // public func checkAuthentication() {
-         //   if Auth.auth().currentUser == nil {
-         //       self.goToController(with: LoginViewController())
-          //  } else {
-          //      self.goToController(with: HomeViewController())
-         //   }
-       // }
         
         private func goToController(with viewController: UIViewController) {
             DispatchQueue.main.async { [weak self] in
@@ -64,4 +53,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             }
         }
     }
-

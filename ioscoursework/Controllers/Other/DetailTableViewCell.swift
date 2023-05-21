@@ -14,36 +14,31 @@ class DetailTableViewCell: UITableViewCell {
         var timeLabel: UILabel!
         var body_partLabel: UILabel!
         var listImageView: UIImageView!
-        //var actionButton: UIButton!
-            override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-                super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+        override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+            super.init(style: style, reuseIdentifier: reuseIdentifier)
                 
-                // Create and configure the UI elements
-                nameLabel = UILabel()
-                countLabel = UILabel()
-                timeLabel = UILabel()
-                body_partLabel = UILabel()
-                listImageView = UIImageView()
+            // Create and configure the UI elements
+            nameLabel = UILabel()
+            countLabel = UILabel()
+            timeLabel = UILabel()
+            body_partLabel = UILabel()
+            listImageView = UIImageView()
                 
-                
-                // Add UI elements to the cell's contentView
-                contentView.addSubview(nameLabel)
-                contentView.addSubview(countLabel)
-                contentView.addSubview(timeLabel)
-                contentView.addSubview(body_partLabel)
-                contentView.addSubview(listImageView)
-              //  actionButton = UIButton(type: .system)
-              //  actionButton.setTitle("VIEW", for: .normal)
-              //  actionButton.translatesAutoresizingMaskIntoConstraints = false
-              //  contentView.addSubview(actionButton)
-                
-                // Configure UI element properties and layout constraints
-                configureConstraints()
-            }
+            // Add UI elements to the cell's contentView
+            contentView.addSubview(nameLabel)
+            contentView.addSubview(countLabel)
+            contentView.addSubview(timeLabel)
+            contentView.addSubview(body_partLabel)
+            contentView.addSubview(listImageView)
+
+            // Configure UI element properties and layout constraints
+            configureConstraints()
+        }
             
-            required init?(coder aDecoder: NSCoder) {
-                fatalError("init(coder:) has not been implemented.")
-            }
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented.")
+        }
             
         func configure(withData data: Detail) {
             nameLabel.text = data.name
@@ -77,42 +72,39 @@ class DetailTableViewCell: UITableViewCell {
             func configureConstraints() {
                 // Set up constraints for titleLabel, subtitleLabel, and customImageView
                 // Adjust the constraints based on your desired layout
-                    nameLabel.translatesAutoresizingMaskIntoConstraints = false
-                    countLabel.translatesAutoresizingMaskIntoConstraints = false
-                    timeLabel.translatesAutoresizingMaskIntoConstraints = false
-                    body_partLabel.translatesAutoresizingMaskIntoConstraints = false
-                    listImageView.translatesAutoresizingMaskIntoConstraints = false
+                nameLabel.translatesAutoresizingMaskIntoConstraints = false
+                countLabel.translatesAutoresizingMaskIntoConstraints = false
+                timeLabel.translatesAutoresizingMaskIntoConstraints = false
+                body_partLabel.translatesAutoresizingMaskIntoConstraints = false
+                listImageView.translatesAutoresizingMaskIntoConstraints = false
                     
-                    let constraints = [
-                        // nameLabel constraints
-                        nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-                        nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                        nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+                let constraints = [
+                    // nameLabel constraints
+                    nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+                    nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                    nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         
-                        // countLabel constraints
-                        countLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
-                        countLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                        countLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+                    // countLabel constraints
+                    countLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
+                    countLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                    countLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         
-                        // timeLabel constraints
-                        timeLabel.topAnchor.constraint(equalTo: countLabel.bottomAnchor, constant: 8),
-                        timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                        timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+                    // timeLabel constraints
+                    timeLabel.topAnchor.constraint(equalTo: countLabel.bottomAnchor, constant: 8),
+                    timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                    timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         
-                        // timeLabel constraints
-                        body_partLabel.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8),
-                        body_partLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                        body_partLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+                    // timeLabel constraints
+                    body_partLabel.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8),
+                    body_partLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                    body_partLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         
-                        // listImageView constraints
-                        listImageView.topAnchor.constraint(equalTo: body_partLabel.bottomAnchor, constant: 8),
-                        listImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-                        listImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-                        listImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-                        listImageView.heightAnchor.constraint(equalToConstant: 200),
-                      //  actionButton.centerYAnchor.constraint(equalTo: countLabel.centerYAnchor),
-                      //  actionButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -18),
-     
+                    // listImageView constraints
+                    listImageView.topAnchor.constraint(equalTo: body_partLabel.bottomAnchor, constant: 8),
+                    listImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                    listImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+                    listImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+                    listImageView.heightAnchor.constraint(equalToConstant: 200),
                     ]
                     
                     NSLayoutConstraint.activate(constraints)

@@ -35,7 +35,6 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         webView.frame = view.bounds
-        
     }
     
     private let welcomeButton: UIButton = {
@@ -52,19 +51,14 @@ class AuthViewController: UIViewController, WKNavigationDelegate {
         vc.compeletionHandler = { [weak self] success in
             DispatchQueue.main.async {
                 self?.handleWelcome(sccess: success)
-                
             }
-            
         }
+        
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
     
     private func handleWelcome (sccess: Bool){
         //login user
-    }
-    
-    
-    
-    
+    }   
 }

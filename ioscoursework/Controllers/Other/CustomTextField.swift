@@ -59,8 +59,6 @@ class CustomTextField: UITextField {
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    case .weightBMI:
                        self.placeholder = "Weight(kg)"
-                    //   self.textContentType = .oneTimeCode
-                   //    self.isSecureTextEntry = true
                        self.layer.borderWidth = 1.0
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    case .name:
@@ -97,13 +95,11 @@ class CustomTextField: UITextField {
                        self.layer.borderColor = UIColor.lightGray.cgColor
                    default:
                     break
-                    
-                    
                    }
-                      }
+        }
                       
-                      required init?(coder: NSCoder) {
-                          fatalError("init(coder:) has not been implemented")
-                      }
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
                       
-                  }
+   }
