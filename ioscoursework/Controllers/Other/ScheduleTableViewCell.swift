@@ -46,21 +46,7 @@ class ScheduleTableViewCell: UITableViewCell {
            nameLabel.text = data.name
            dateLabel.text = String(data.date)
            timeLabel.text = data.time
-          // if let imageUrl = URL(string: data.image_url) {
-            //     DispatchQueue.global().async {
-              //       if let imageData = try? Data(contentsOf: imageUrl) {
-              //           DispatchQueue.main.async {
-              //               self.listImageView.image = UIImage(data: imageData)
-               //          }
-            //         }
-          //       }
-          //   } else {
-                 // Set a default image if the URL is invalid or nil
-           //      self.listImageView.image = UIImage(named: "BMI")
-         //    }
-       
-               // Load image using Kingfisher
-   //
+
            }
            
            func configureConstraints() {
