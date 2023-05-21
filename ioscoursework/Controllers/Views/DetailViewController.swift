@@ -36,8 +36,10 @@ class DetailViewController: UIViewController, UITableViewDataSource {
                     // Convert the snapshot data to Detail model
                     let data = Detail(
                         name: dataDict["name"] as? String ?? "",
+                        image_url: dataDict["image_url"] as? String ?? "",
                         count: dataDict["count"] as? Int ?? 0,
-                        time: dataDict["time"] as? String ?? ""
+                        time: dataDict["time"] as? String ?? "",
+                        body_part: dataDict["body_part"] as? String ?? ""
                     )
                     print(data)
                     self.dataSource.append(data)

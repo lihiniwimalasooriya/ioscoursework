@@ -12,6 +12,7 @@ class DetailTableViewCell: UITableViewCell {
     var nameLabel: UILabel!
         var countLabel: UILabel!
         var timeLabel: UILabel!
+        var body_partLabel: UILabel!
         var listImageView: UIImageView!
         var actionButton: UIButton!
             override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -21,6 +22,7 @@ class DetailTableViewCell: UITableViewCell {
                 nameLabel = UILabel()
                 countLabel = UILabel()
                 timeLabel = UILabel()
+                body_partLabel = UILabel()
                 listImageView = UIImageView()
                 
                 
@@ -28,6 +30,7 @@ class DetailTableViewCell: UITableViewCell {
                 contentView.addSubview(nameLabel)
                 contentView.addSubview(countLabel)
                 contentView.addSubview(timeLabel)
+                contentView.addSubview(body_partLabel)
                 contentView.addSubview(listImageView)
                 actionButton = UIButton(type: .system)
                 actionButton.setTitle("VIEW", for: .normal)
@@ -69,6 +72,7 @@ class DetailTableViewCell: UITableViewCell {
                     nameLabel.translatesAutoresizingMaskIntoConstraints = false
                     countLabel.translatesAutoresizingMaskIntoConstraints = false
                     timeLabel.translatesAutoresizingMaskIntoConstraints = false
+                    body_partLabel.translatesAutoresizingMaskIntoConstraints = false
                     listImageView.translatesAutoresizingMaskIntoConstraints = false
                     
                     let constraints = [
@@ -86,6 +90,11 @@ class DetailTableViewCell: UITableViewCell {
                         timeLabel.topAnchor.constraint(equalTo: countLabel.bottomAnchor, constant: 8),
                         timeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
                         timeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+                        
+                        // timeLabel constraints
+                        body_partLabel.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8),
+                        body_partLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+                        body_partLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
                         
                         // listImageView constraints
                         listImageView.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 8),
