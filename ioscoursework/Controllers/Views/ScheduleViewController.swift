@@ -9,17 +9,21 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class ScheduleViewController: UIViewController, UITableViewDataSource {
+class ScheduleViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    private let headerView = AuthHeaderView(title: "Scheduled Workouts", subTitle: "***")
-    private let addButton = CustomButton(title: "ADD", hasBackground: true, fontSize: .big)
-    
-            var tableView: UITableView!
+    private let headerView = AuthHeaderView(title: "My Schedule", subTitle: "***")
+    var tableView: UITableView!
             var databaseRef: DatabaseReference!
             var dataSource: [Schedule] = []
             
             override func viewDidLoad() {
                 super.viewDidLoad()
+                let button = UIButton(type: .system)
+                        button.setTitle("Your Button Title", for: .normal)
+                button.backgroundColor = .black
+                        button.translatesAutoresizingMaskIntoConstraints = false
+                        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+                        view.addSubview(button)
                 
                 // Initialize Firebase Database reference
                 databaseRef = Database.database().reference()
@@ -32,77 +36,74 @@ class ScheduleViewController: UIViewController, UITableViewDataSource {
                 tableView.dataSource = self
               
                 tableView.register(ScheduleTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
+                
+               
                 view.addSubview(tableView)
-                
-                self.setupAddSchedule()
-               // self.addButton.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
-                
+                let buttonConstraints = [
+                     button.topAnchor.constraint(equalTo: view.topAnchor, constant: 16),
+                     button.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+                     // Add more constraints as needed
+                 ]
+                 NSLayoutConstraint.activate(buttonConstraints)
             }
-    
-    private func setupAddSchedule() {
-        self.view.backgroundColor = .systemBackground
-        let backgroundImage = UIImageView(image: UIImage(named: "User"))
-             backgroundImage.contentMode = .scaleAspectFill
-             backgroundImage.frame = view.bounds
-             view.addSubview(backgroundImage)
-             view.sendSubviewToBack(backgroundImage)
-     
-        self.view.addSubview(headerView)
-        self.view.addSubview(addButton)
-        
-        headerView.translatesAutoresizingMaskIntoConstraints = false
-        addButton.translatesAutoresizingMaskIntoConstraints = false
-         
-        NSLayoutConstraint.activate([
-
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-               headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-
-            
-                // userButton constraints
-                addButton.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 20),
-                addButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                addButton.heightAnchor.constraint(equalToConstant: 50),
-
-            ])
-        
-        
-    }
             
             func loadDataFromFirebase() {
+                self.view.addSubview(headerView)
                 databaseRef.child("schedule").observe(.childAdded, with: { (snapshot) in
                     if let dataDict = snapshot.value as? [String: Any] {
-                        // Convert the snapshot data to Exercise model
                         let data = Schedule(
-                            //id:dataDict["id"] as? String ?? "",
-                            //image_url:dataDict["image_url"] as? String ?? "",
-                                                id: dataDict["id"] as? String ?? "",
-                                                name: dataDict["name"] as? String ?? "",
-                                                date: dataDict["date"] as? String ?? "",
-                                                time: dataDict["time"] as? String ?? "")
-                        print(data)
+                            id: dataDict["id"] as? String ?? "",
+                            name: dataDict["name"] as? String ?? "",
+                            date: dataDict["date"] as? String ?? "",
+                            time: dataDict["time"] as? String ?? ""
+                        )
                         self.dataSource.append(data)
                         self.tableView.reloadData()
                     }
                 })
+                
+                self.view.addSubview(headerView)
+                
+                headerView.translatesAutoresizingMaskIntoConstraints = false
+                 
+                NSLayoutConstraint.activate([
+
+                    headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+                        headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+                        headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+
+                    ])
             }
-       
-            
+    
+        @objc func buttonTapped(_ sender: UIButton) {
+              let selectedData = dataSource[sender.tag]
+            let documentID = selectedData.id
+              print("Selected document ID:", documentID)
+              let detailViewController = DetailViewController()
+                    
+                    // Set the document ID property of the destination view controller
+            detailViewController.documentId = documentID
+                    
+                    // Present the destination view controller
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+
+              
+              // Perform any operations based on the selected document ID
+          }
+            func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+                return dataSource.count
+            }
             
             func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! ScheduleTableViewCell
                 
                 let data = dataSource[indexPath.row]
                 cell.configure(withData: data)
-             //   cell.actionButton.tag = indexPath.row // Set the row index as the button tag
-             //   cell.actionButton.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
                 
                 return cell
             }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+         return 120 // Set the desired height for the table view cell
+     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
-    }
 }

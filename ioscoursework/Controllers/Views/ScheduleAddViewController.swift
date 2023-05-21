@@ -14,12 +14,14 @@ class ScheduleAddViewController: UIViewController {
     private let databaseRef = Database.database().reference()
     
     private let headerView = AuthHeaderView(title: "Schedule Workout", subTitle: "***")
-    private let planname = CustomTextField(fieldType: .name)
-    //private let datePicker = CustomTextField(fieldType: .datePicker)
-    private let timePicker = CustomTextField(fieldType: .timePicker)
-    private let addButton = CustomButton(title: "ADD", hasBackground: true, fontSize: .big)
-    
+    private let planname = CustomTextField(fieldType: .planname)
+    private let datePickerLabel = CustomTextField(fieldType: .datePicker)
     private let datePicker = UIDatePicker()
+    private let timePickerLabel = CustomTextField(fieldType: .timePicker)
+    private let timePicker = UIDatePicker()
+    private let addButton = CustomButton(title: "Add", hasBackground: true, fontSize: .big)
+    private let myButton = CustomButton(title: "My Schedule", hasBackground: true, fontSize: .big)
+    
 
                   
         override func viewDidLoad() {
@@ -27,7 +29,7 @@ class ScheduleAddViewController: UIViewController {
 
             self.setupAddSchedule()
             self.addButton.addTarget(self, action: #selector(didTapAdd), for: .touchUpInside)
-        }
+            self.myButton.addTarget(self, action: #selector(didTapMy), for: .touchUpInside)        }
         
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
@@ -43,9 +45,11 @@ class ScheduleAddViewController: UIViewController {
             datePicker.datePickerMode = .date
             datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
             self.view.addSubview(datePicker)
-
+            
+            timePicker.addTarget(self, action: #selector(timePickerValueChanged), for: .valueChanged)
+            
             self.view.backgroundColor = .systemBackground
-            let backgroundImage = UIImageView(image: UIImage(named: "User"))
+            let backgroundImage = UIImageView(image: UIImage(named: "schedule"))
                  backgroundImage.contentMode = .scaleAspectFill
                  backgroundImage.frame = view.bounds
                  view.addSubview(backgroundImage)
@@ -56,12 +60,14 @@ class ScheduleAddViewController: UIViewController {
             self.view.addSubview(datePicker)
             self.view.addSubview(timePicker)
             self.view.addSubview(addButton)
+            self.view.addSubview(myButton)
             
             headerView.translatesAutoresizingMaskIntoConstraints = false
             planname.translatesAutoresizingMaskIntoConstraints = false
             datePicker.translatesAutoresizingMaskIntoConstraints = false
             timePicker.translatesAutoresizingMaskIntoConstraints = false
             addButton.translatesAutoresizingMaskIntoConstraints = false
+            myButton.translatesAutoresizingMaskIntoConstraints = false
              
             NSLayoutConstraint.activate([
 
@@ -85,13 +91,6 @@ class ScheduleAddViewController: UIViewController {
                     datePicker.heightAnchor.constraint(equalToConstant: 50),
                 
                 
-
-                // Add the following lines:
-              //  datePicker.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 20),
-             //   datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-               // datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-               // datePicker.heightAnchor.constraint(equalToConstant: 50),
-                
                     // height constraints
                     timePicker.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 20),
                     timePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -104,8 +103,11 @@ class ScheduleAddViewController: UIViewController {
                     addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     addButton.heightAnchor.constraint(equalToConstant: 50),
                 
-                
-
+                // userButton constraints
+                myButton.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 20),
+                myButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+                myButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                myButton.heightAnchor.constraint(equalToConstant: 50),
                 ])
             
             
@@ -113,27 +115,25 @@ class ScheduleAddViewController: UIViewController {
         @objc private func didTapAdd() {
             
             let name = planname.text
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
-                    let selectedDate = dateFormatter.string(from: datePicker.date)
-                    let time = timePicker.text
-                    
-                    let data = [
-                        "name": name,
-                        "datePicker": selectedDate,
-                        "timePicker": time
-                    ]
-            
-         
-                databaseRef.child("schedule").childByAutoId().setValue(data){error,_ in
-                    if let error = error{
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let selectedDate = dateFormatter.string(from: datePicker.date)
+                let time = timePicker.date
+                
+                let data = [
+                    "name": name,
+                    "datePicker": selectedDate,
+                    "timePicker": time
+                ] as [String : Any]
+                
+                databaseRef.child("schedule").childByAutoId().setValue(data) { error, _ in
+                    if let error = error {
                         print("Error posting data: \(error.localizedDescription)")
-                    }else{
+                    } else {
                         print("Data posted successfully")
                     }
-             
+                    
                     let vc = ScheduleViewController()
-
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: false, completion: nil)
                 }
@@ -144,7 +144,21 @@ class ScheduleAddViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let selectedDate = dateFormatter.string(from: datePicker.date)
-        planname.text = selectedDate
+        datePickerLabel.text = selectedDate
+    }
+    
+    @objc private func timePickerValueChanged() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        let selectedTime = dateFormatter.string(from: timePicker.date)
+        timePickerLabel.text = selectedTime
+    }
+    
+    @objc private func didTapMy() {
+        
+        let VC = ScheduleViewController()
+        // Configure anotherVC if needed
+        self.navigationController?.pushViewController(VC, animated: true)
     }
     
 }

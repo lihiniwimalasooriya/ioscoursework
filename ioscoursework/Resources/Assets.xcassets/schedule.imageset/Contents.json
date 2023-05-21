@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "healthy-lifestyle-concept-mock-up-workout-fitness-dieting-diary-copy-space-workout-log-sheet-blue-shaker-measuring-129633956.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

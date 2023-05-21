@@ -17,7 +17,7 @@ class TabBarViewController: UITabBarController {
         let vc1 = ExerciseListViewController()
         let vc2 = UserViewController()
         let vc3 = BMIViewController()
-        let vc4 = ScheduleViewController()
+        let vc4 = ScheduleAddViewController()
         
         vc1.title = "Exercises"
         vc2.title = "User Details"
