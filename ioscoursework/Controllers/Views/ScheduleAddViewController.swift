@@ -69,7 +69,8 @@ class ScheduleAddViewController: UIViewController {
              
             NSLayoutConstraint.activate([
 
-                headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+                    // headerView constraints
+                    headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
                     headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
@@ -79,31 +80,29 @@ class ScheduleAddViewController: UIViewController {
                     planname.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     planname.heightAnchor.constraint(equalToConstant: 50),
                 
-                    datePicker.topAnchor.constraint(equalTo: planname.bottomAnchor, constant: 20),
-                
-                    // age constraints
+                    // datePicker constraints
                     datePicker.topAnchor.constraint(equalTo: planname.bottomAnchor, constant: 20),
                     datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     datePicker.heightAnchor.constraint(equalToConstant: 50),
                 
-                    // height constraints
+                    // time constraints
                     timePicker.topAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 20),
                     timePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     timePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     timePicker.heightAnchor.constraint(equalToConstant: 50),
                 
-                    // userButton constraints
+                    // addButton constraints
                     addButton.topAnchor.constraint(equalTo: timePicker.bottomAnchor, constant: 20),
                     addButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
                     addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
                     addButton.heightAnchor.constraint(equalToConstant: 50),
                 
-                // userButton constraints
-                myButton.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 20),
-                myButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-                myButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-                myButton.heightAnchor.constraint(equalToConstant: 50),
+                    // myButton constraints
+                    myButton.topAnchor.constraint(equalTo: addButton.bottomAnchor, constant: 20),
+                    myButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+                    myButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+                    myButton.heightAnchor.constraint(equalToConstant: 50),
                 ])
         }
     
